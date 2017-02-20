@@ -1,0 +1,38 @@
+{
+  "files": [
+    "lineage_server",
+    "__init__.py",
+    "__main__.py",
+    "build",
+    "requirements.txt",
+    "requirements_dev.txt",
+    "docker_packages.txt"
+  ],
+  "scripts": {
+    "check": "flake8",
+    "pretest": "npm run check",
+    "test": "test ! -d tests || python setup.py test",
+    "docs": "sphinx-apidoc -o docs -f ./lineage_server && sphinx-build ./docs build/docs",
+    "prebuild": "node -e \"process.exit(process.env.PHOVEA_SKIP_TESTS === undefined?1:0)\" || npm run test",
+    "build": "python build.py",
+    "predist": "npm run build && npm run docs",
+    "dist": "python setup.py bdist_egg"
+  },
+  "name": "lineage_server",
+  "description": "Server for Lineage, the genealogy visualization tool",
+  "homepage": "https://phovea.caleydo.org",
+  "version": "1.0.0-SNAPSHOT",
+  "author": {
+    "name": "Alexander Lex",
+    "email": "alex@sci.utah.edu",
+    "url": "http://alexander-lex.net"
+  },
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/caleydo/lineage_server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caleydo/lineage_server.git"
+  }
+}
