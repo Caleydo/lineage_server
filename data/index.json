@@ -182,7 +182,7 @@
     "creator": "Alexander Lex",
     "path": "data_38.csv",
     "size": [
-      12,
+      102,
       12
     ],
     "idtype": "Custom",
@@ -309,7 +309,6 @@
           "type": "string"
         }
       }
-    ],
-    "idcolumn": 0
+    ]
   }
 ]
