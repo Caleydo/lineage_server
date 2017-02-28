@@ -1,43 +1,41 @@
 [
-   {
+      {
     "name": "big-decent-clipped-38",
     "type": "table",
     "id": "big-decent-clipped-38",
     "separator": ",",
-    "description": "Genealogy Data",
+    "description": "description_client",
     "creator": "Alexander Lex",
     "path": "data_38.csv",
     "size": [
-      102,
-      12
+      12,
+      24
     ],
-    "idtype": "patients",
+    "idtype": "Custom",
     "columns": [
       {
-        "name": "KindredID",
-        "value": {
-          "type": "string"
-        }
-      },
-      {
+        "column": 1,
         "name": "RelativeID",
         "value": {
-          "type": "string"
+          "type": "idtype"
         }
       },
       {
+        "column": 2,
         "name": "MaID",
         "value": {
-          "type": "string"
+          "type": "idtype"
         }
       },
       {
+        "column": 3,
         "name": "PaID",
         "value": {
-          "type": "string"
+          "type": "idtype"
         }
       },
       {
+        "column": 4,
         "name": "sex",
         "value": {
           "type": "categorical",
@@ -54,6 +52,7 @@
         }
       },
       {
+        "column": 5,
         "name": "deceased",
         "value": {
           "type": "categorical",
@@ -62,7 +61,7 @@
               "name": "Y",
               "color": "#1f77b4"
             },
-            {
+			{
               "name": "N",
               "color": "#1f77b4"
             }
@@ -70,6 +69,7 @@
         }
       },
       {
+        "column": 6,
         "name": "suicide",
         "value": {
           "type": "categorical",
@@ -78,7 +78,7 @@
               "name": "Y",
               "color": "#1f77b4"
             },
-            {
+			{
               "name": "N",
               "color": "#1f77b4"
             }
@@ -86,49 +86,56 @@
         }
       },
       {
+        "column": 7,
         "name": "bdate",
         "value": {
           "type": "int",
           "range": [
             1811,
-            1994
+            1899
           ]
         }
       },
       {
+        "column": 8,
         "name": "ddate",
         "value": {
           "type": "int",
           "range": [
             1885,
-            3000
+            1991
           ]
         }
       },
       {
+        "column": 9,
         "name": "OMEID",
         "value": {
-          "type": "string"
+          "type": "idtype"
         }
       },
       {
+        "column": 10,
         "name": "LabID",
         "value": {
-          "type": "string"
+          "type": "idtype"
         }
       },
       {
+        "column": 11,
         "name": "UPDBid",
         "value": {
-          "type": "string"
+          "type": "idtype"
         }
       },
       {
+        "column": 12,
         "name": "ArchivePersonID",
         "value": {
-          "type": "string"
+          "type": "idtype"
         }
       }
-    ]
+    ],
+    "idcolumn": 0
   }
 ]
