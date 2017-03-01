@@ -1,0 +1,42 @@
+[
+  {
+    "id": "KindredID",
+    "name": "KindredID",
+    "names": "KindredIDs"
+  },
+  {
+    "id": "RelativeID",
+    "name": "RelativeID",
+    "names": "RelativeIDs"
+  },
+  {
+    "id": "MaID",
+    "name": "Mother's ID",
+    "names": "Mother's IDs"
+  },
+  {
+    "id": "PaID",
+    "name": "Father's ID",
+    "names": "Father's IDs"
+  },
+  {
+    "id": "OMEID",
+    "name": "OMEID",
+    "names": "OMEIDs"
+  },
+  {
+    "id": "LabID",
+    "name": "LabID",
+    "names": "LabIDs"
+  },
+  {
+    "id": "UPDBid",
+    "name": "UPDBid",
+    "names": "UPDBids"
+  },
+  {
+    "id": "ArchivePersonID",
+    "name": "ArchivePersonID",
+    "names": "ArchivePersonIDs"
+  }
+]
