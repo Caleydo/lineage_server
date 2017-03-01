@@ -14,30 +14,28 @@
     "idtype": "patients",
     "columns": [
       {
-        "name": "KindredID",
-        "value": {
-          "type": "string"
-        }
-      },
-      {
+        "column": 1,
         "name": "RelativeID",
         "value": {
           "type": "string"
         }
       },
       {
+        "column": 2,
         "name": "MaID",
         "value": {
           "type": "string"
         }
       },
       {
+        "column": 3,
         "name": "PaID",
         "value": {
           "type": "string"
         }
       },
       {
+        "column": 4,
         "name": "sex",
         "value": {
           "type": "categorical",
@@ -54,6 +52,7 @@
         }
       },
       {
+        "column": 5,
         "name": "deceased",
         "value": {
           "type": "categorical",
@@ -70,6 +69,7 @@
         }
       },
       {
+        "column": 6,
         "name": "suicide",
         "value": {
           "type": "categorical",
@@ -86,6 +86,7 @@
         }
       },
       {
+        "column": 7,
         "name": "bdate",
         "value": {
           "type": "int",
@@ -96,6 +97,7 @@
         }
       },
       {
+        "column": 8,
         "name": "ddate",
         "value": {
           "type": "int",
@@ -106,24 +108,28 @@
         }
       },
       {
+        "column": 9,
         "name": "OMEID",
         "value": {
           "type": "string"
         }
       },
       {
+        "column": 10,
         "name": "LabID",
         "value": {
           "type": "string"
         }
       },
       {
+        "column": 11,
         "name": "UPDBid",
         "value": {
           "type": "string"
         }
       },
       {
+        "column": 12,
         "name": "ArchivePersonID",
         "value": {
           "type": "string"
