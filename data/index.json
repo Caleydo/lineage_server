@@ -1,5 +1,5 @@
 [
-      {
+  {
     "name": "big-decent-clipped-38",
     "type": "table",
     "id": "big-decent-clipped-38",
@@ -7,11 +7,12 @@
     "description": "description_client",
     "creator": "Alexander Lex",
     "path": "data_38.csv",
+    "idcolumn": 0,
+    "idtype": "KindredID",
     "size": [
       12,
       102
     ],
-    "idtype": "Custom",
     "columns": [
       {
         "column": 1,
@@ -61,7 +62,7 @@
               "name": "Y",
               "color": "#1f77b4"
             },
-			{
+            {
               "name": "N",
               "color": "#1f77b4"
             }
@@ -78,7 +79,7 @@
               "name": "Y",
               "color": "#1f77b4"
             },
-			{
+            {
               "name": "N",
               "color": "#1f77b4"
             }
@@ -135,7 +136,6 @@
           "type": "idtype"
         }
       }
-    ],
-    "idcolumn": 0
+    ]
   }
 ]
