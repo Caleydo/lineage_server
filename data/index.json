@@ -9,8 +9,8 @@
 	"idcolumn": 0,
 	"idtype": "KindredID",
 	"size": [
-		24,
-		102
+		96,
+    24
 	],
 	"columns": [{
 		"column": 1,
@@ -235,7 +235,7 @@
     "idcolumn": 0,
     "idtype": "RelativeID",
     "size": [
-      177,
+      178,
       13
     ],
     "columns": [{
