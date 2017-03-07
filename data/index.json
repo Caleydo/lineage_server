@@ -231,12 +231,12 @@
     "separator": ",",
     "description": "description_client",
     "creator": "Carolina Nobre",
-    "path": "SmallDescendProcessed.csv",
+    "path": "SmallDescendAnon.csv",
     "idcolumn": 0,
     "idtype": "RelativeID",
     "size": [
-      13,
-      193
+      177,
+      13
     ],
     "columns": [{
       "column": 1,
