@@ -490,4 +490,147 @@
           ]
         }
       }]
+  },
+  {
+    "name": "Attributes",
+    "type": "table",
+    "id": "Attributes",
+    "separator": ",",
+    "description": "description_client",
+    "creator": "Carolina Nobre",
+    "path": "sampleAttributes.csv",
+    "idcolumn": 0,
+    "idtype": "personid",
+    "size": [
+      22,
+      27
+    ],
+    "columns": [{
+      "column": 1,
+      "name": "UPDBid",
+      "value": {
+        "type": "idtype"
+      }
+    }, {
+      "column": 2,
+      "name": "OMEID",
+      "value": {
+        "type": "idtype"
+      }
+    }, {
+      "column": 3,
+      "name": "LabID",
+      "value": {
+        "type": "idtype"
+      }
+    }, {
+      "column": 4,
+      "name": "FirstBMI",
+      "value": {
+        "type": "int",
+        "range": [
+          15,
+          40
+        ]
+      }
+    }, {
+      "column": 5,
+      "name": "FirstBMIYr",
+      "value": {
+        "type": "int",
+        "range": [
+          1800,
+          2005
+        ]
+      }
+    },
+      {
+        "column": 6,
+        "name": "MaxBMI",
+        "value": {
+          "type": "int",
+          "range": [
+            15,
+            40
+          ]
+        }
+      },
+      {
+        "column": 7,
+        "name": "MaxBMIYr",
+        "value": {
+          "type": "int",
+          "range": [
+            1800,
+            2005
+          ]
+        }
+      },
+      {
+        "column": 8,
+        "name": "GENDER",
+        "value": {
+          "type": "categorical",
+          "categories": [{
+            "name": "1",
+            "color": "#1f77b4"
+          }, {
+            "name": "0",
+            "color": "#ff7f0e"
+          }]
+        }
+      },
+      {
+        "column": 9,
+        "name": "STATENUM",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "column": 10,
+        "name": "dob",
+        "value": {
+          "type": "int",
+          "range": [
+            1768,
+            2014
+          ]
+        }
+      }, {
+        "column": 11,
+        "name": "ddate",
+        "value": {
+          "type": "int",
+          "range": [
+            1822,
+            2016
+          ]
+        }
+      },
+      {
+        "column": 12,
+        "name": "race",
+        "value": {
+          "type": "categorical",
+          "categories": [{
+            "name": "1",
+            "color": "#1f77b4"
+          }, {
+            "name": "0",
+            "color": "#ff7f0e"
+          }]
+        }
+      },
+      {
+        "column": 13,
+        "name": "age",
+        "value": {
+          "type": "int",
+          "range": [
+            0,
+            120
+          ]
+        }
+      }]
   }]
