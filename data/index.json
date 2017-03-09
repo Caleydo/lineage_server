@@ -507,7 +507,7 @@
     ],
     "columns": [{
       "column": 1,
-      "name": "UPDBid",
+      "name": "UPDBARCHIVEID",
       "value": {
         "type": "idtype"
       }
