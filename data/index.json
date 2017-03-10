@@ -469,7 +469,7 @@
         }
       },
       {
-        "column": 11,
+        "column": 10,
         "name": "zip",
         "value": {
           "type": "int",
@@ -704,28 +704,28 @@
       },
       {
         "column": 16,
-        "name": "cause_death",
+        "name": "cod_con3",
         "value": {
           "type": "string"
         }
       },
       {
         "column": 17,
-        "name": "cause_death",
+        "name": "cod_con4",
         "value": {
           "type": "string"
         }
       },
       {
         "column": 18,
-        "name": "cause_death",
+        "name": "cod_con5",
         "value": {
           "type": "string"
         }
       },
       {
         "column": 19,
-        "name": "cause_death",
+        "name": "cod_con6",
         "value": {
           "type": "string"
         }
