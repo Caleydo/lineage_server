@@ -369,6 +369,20 @@
             }
           ]
         }
+      },
+      {
+        "column": 10,
+        "name": "cause_death",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "column": 11,
+        "name": "weapon",
+        "value": {
+          "type": "string"
+        }
       }
     ]
   },
@@ -379,7 +393,7 @@
     "separator": ",",
     "description": "description_client",
     "creator": "Carolina Nobre",
-    "path": "50FamiliesAttributes.csv",
+    "path": "Attributes.csv",
     "idcolumn": 0,
     "idtype": "personid",
     "size": [
