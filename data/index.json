@@ -4,6 +4,7 @@
     "type": "table",
     "id": "TwoFamiliesDescendAnon",
     "separator": ",",
+    "quotechar": "\"",
     "description": "description_client",
     "creator": "Carolina Nobre",
     "path": "TwoFamiliesDescendAnon.csv",
@@ -156,11 +157,12 @@
       }
     ]
   },
-   {
+  {
     "name": "FiftyFamiliesDescendAnon",
     "type": "table",
     "id": "FiftyFamiliesDescendAnon",
     "separator": ",",
+    "quotechar": "\"",
     "description": "description_client",
     "creator": "Carolina Nobre",
     "path": "FiftyFamiliesDescendAnon.csv",
@@ -313,7 +315,7 @@
       }
     ]
   },
-   {
+  {
     "name": "AllFamiliesDescendAnon",
     "type": "table",
     "id": "AllFamiliesDescendAnon",
@@ -470,11 +472,12 @@
       }
     ]
   },
-    {
+  {
     "name": "TwoFamiliesAttributes",
     "type": "table",
     "id": "TwoFamiliesAttributes",
     "separator": ",",
+    "quotechar": "\"",
     "description": "description_client",
     "creator": "Carolina Nobre",
     "path": "TwoFamiliesAttributes.csv",
