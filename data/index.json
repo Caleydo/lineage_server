@@ -16,35 +16,30 @@
     ],
     "columns": [
       {
-        "column": 1,
         "name": "PersonID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 2,
         "name": "KindredID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 3,
         "name": "MaID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 4,
         "name": "PaID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 5,
         "name": "sex",
         "value": {
           "type": "categorical",
@@ -61,7 +56,6 @@
         }
       },
       {
-        "column": 6,
         "name": "deceased",
         "value": {
           "type": "categorical",
@@ -78,7 +72,6 @@
         }
       },
       {
-        "column": 7,
         "name": "suicide",
         "value": {
           "type": "categorical",
@@ -95,7 +88,6 @@
         }
       },
       {
-        "column": 8,
         "name": "bdate",
         "value": {
           "type": "int",
@@ -106,7 +98,6 @@
         }
       },
       {
-        "column": 9,
         "name": "ddate",
         "value": {
           "type": "int",
@@ -117,35 +108,182 @@
         }
       },
       {
-        "column": 10,
         "name": "OMEID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 11,
         "name": "LabID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 12,
-        "name": "UPDBid",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "column": 13,
         "name": "ArchivePersonID",
         "value": {
           "type": "idtype"
         }
       },
+            {
+        "name": "gen",
+        "value": {
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
+        }
+      },
       {
-        "column": 14,
+        "name": "Age",
+        "value": {
+          "type": "int",
+          "range": [
+            0,
+            90
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "TenFamiliesDescendAnon",
+    "type": "table",
+    "id": "TenFamiliesDescendAnon",
+    "separator": ",",
+    "quotechar": "\"",
+    "description": "description_client",
+    "creator": "Carolina Nobre",
+    "path": "TenFamiliesDescendAnon.csv",
+    "idcolumn": 0,
+    "idtype": "RelativeID",
+    "size": [
+      5582,
+      14
+    ],
+    "columns": [
+      {
+        "name": "PersonID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "KindredID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "MaID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "PaID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "sex",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "F",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "M",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "deceased",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "Y",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "N",
+              "color": "#1f77b4"
+            }
+          ]
+        }
+      },
+      {
+        "name": "suicide",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "Y",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "N",
+              "color": "#1f77b4"
+            }
+          ]
+        }
+      },
+      {
+        "name": "bdate",
+        "value": {
+          "type": "int",
+          "range": [
+            1768,
+            2014
+          ]
+        }
+      },
+      {
+        "name": "ddate",
+        "value": {
+          "type": "int",
+          "range": [
+            1822,
+            2016
+          ]
+        }
+      },
+      {
+        "name": "OMEID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "LabID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "ArchivePersonID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+            {
+        "name": "gen",
+        "value": {
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
+        }
+      },
+      {
         "name": "Age",
         "value": {
           "type": "int",
@@ -172,37 +310,32 @@
       183,
       8475
     ],
-    "columns": [
+       "columns": [
       {
-        "column": 1,
         "name": "PersonID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 2,
         "name": "KindredID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 3,
         "name": "MaID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 4,
         "name": "PaID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 5,
         "name": "sex",
         "value": {
           "type": "categorical",
@@ -219,7 +352,6 @@
         }
       },
       {
-        "column": 6,
         "name": "deceased",
         "value": {
           "type": "categorical",
@@ -236,7 +368,6 @@
         }
       },
       {
-        "column": 7,
         "name": "suicide",
         "value": {
           "type": "categorical",
@@ -253,7 +384,6 @@
         }
       },
       {
-        "column": 8,
         "name": "bdate",
         "value": {
           "type": "int",
@@ -264,7 +394,6 @@
         }
       },
       {
-        "column": 9,
         "name": "ddate",
         "value": {
           "type": "int",
@@ -275,35 +404,34 @@
         }
       },
       {
-        "column": 10,
         "name": "OMEID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 11,
         "name": "LabID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 12,
-        "name": "UPDBid",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "column": 13,
         "name": "ArchivePersonID",
         "value": {
           "type": "idtype"
         }
       },
+            {
+        "name": "gen",
+        "value": {
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
+        }
+      },
       {
-        "column": 14,
         "name": "Age",
         "value": {
           "type": "int",
@@ -331,35 +459,30 @@
     ],
     "columns": [
       {
-        "column": 1,
         "name": "PersonID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 2,
         "name": "KindredID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 3,
         "name": "MaID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 4,
         "name": "PaID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 5,
         "name": "sex",
         "value": {
           "type": "categorical",
@@ -376,7 +499,6 @@
         }
       },
       {
-        "column": 6,
         "name": "deceased",
         "value": {
           "type": "categorical",
@@ -393,7 +515,6 @@
         }
       },
       {
-        "column": 7,
         "name": "suicide",
         "value": {
           "type": "categorical",
@@ -410,7 +531,6 @@
         }
       },
       {
-        "column": 8,
         "name": "bdate",
         "value": {
           "type": "int",
@@ -421,7 +541,6 @@
         }
       },
       {
-        "column": 9,
         "name": "ddate",
         "value": {
           "type": "int",
@@ -432,35 +551,34 @@
         }
       },
       {
-        "column": 10,
         "name": "OMEID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 11,
         "name": "LabID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 12,
-        "name": "UPDBid",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "column": 13,
         "name": "ArchivePersonID",
         "value": {
           "type": "idtype"
         }
       },
+            {
+        "name": "gen",
+        "value": {
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
+        }
+      },
       {
-        "column": 14,
         "name": "Age",
         "value": {
           "type": "int",
@@ -487,33 +605,29 @@
       22,
       30
     ],
-    "columns": [
+     "columns": [
       {
-        "column": 1,
         "name": "UPDBARCHIVEID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 2,
         "name": "OMEID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 3,
         "name": "LabID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 4,
         "name": "FirstBMI",
         "value": {
-          "type": "int",
+          "type": "real",
           "range": [
             15,
             40
@@ -521,7 +635,6 @@
         }
       },
       {
-        "column": 5,
         "name": "FirstBMIYr",
         "value": {
           "type": "int",
@@ -532,10 +645,9 @@
         }
       },
       {
-        "column": 6,
         "name": "MaxBMI",
         "value": {
-          "type": "int",
+          "type": "real",
           "range": [
             15,
             40
@@ -543,7 +655,6 @@
         }
       },
       {
-        "column": 7,
         "name": "MaxBMIYr",
         "value": {
           "type": "int",
@@ -554,14 +665,12 @@
         }
       },
       {
-        "column": 8,
         "name": "STATENUM",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 9,
         "name": "race",
         "value": {
           "type": "categorical",
@@ -578,81 +687,70 @@
         }
       },
       {
-        "column": 10,
         "name": "zip",
         "value": {
           "type": "int",
           "range": [
             0,
-            120
+            10000
           ]
         }
       },
       {
-        "column": 11,
         "name": "cause_death",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 12,
         "name": "weapon",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 13,
         "name": "cod_under",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 14,
         "name": "cod_con1",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 15,
         "name": "cod_con2",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 16,
         "name": "cod_con3",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 17,
         "name": "cod_con4",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 18,
         "name": "cod_con5",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 19,
         "name": "cod_con6",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 20,
         "name": "anxiety",
         "value": {
           "type": "categorical",
@@ -669,7 +767,6 @@
         }
       },
       {
-        "column": 21,
         "name": "bipolar",
         "value": {
           "type": "categorical",
@@ -686,7 +783,6 @@
         }
       },
       {
-        "column": 22,
         "name": "cancer",
         "value": {
           "type": "categorical",
@@ -703,7 +799,6 @@
         }
       },
       {
-        "column": 23,
         "name": "cardiovas",
         "value": {
           "type": "categorical",
@@ -720,7 +815,6 @@
         }
       },
       {
-        "column": 24,
         "name": "depression",
         "value": {
           "type": "categorical",
@@ -737,7 +831,6 @@
         }
       },
       {
-        "column": 25,
         "name": "personality",
         "value": {
           "type": "categorical",
@@ -754,7 +847,6 @@
         }
       },
       {
-        "column": 26,
         "name": "previous_attempt",
         "value": {
           "type": "categorical",
@@ -771,7 +863,6 @@
         }
       },
       {
-        "column": 27,
         "name": "psychotic",
         "value": {
           "type": "categorical",
@@ -788,7 +879,6 @@
         }
       },
       {
-        "column": 28,
         "name": "PTSD",
         "value": {
           "type": "categorical",
@@ -805,7 +895,6 @@
         }
       },
       {
-        "column": 29,
         "name": "schizophrenia",
         "value": {
           "type": "categorical",
@@ -822,7 +911,6 @@
         }
       },
       {
-        "column": 30,
         "name": "substance_abuse",
         "value": {
           "type": "categorical",
@@ -841,46 +929,43 @@
     ]
   },
   {
-    "name": "allAttributes",
+    "name": "TenFamiliesAttributes",
     "type": "table",
-    "id": "allAttributes",
+    "id": "TenFamiliesAttributes",
     "separator": ",",
+    "quotechar": "\"",
     "description": "description_client",
     "creator": "Carolina Nobre",
-    "path": "Attributes.csv",
+    "path": "TenFamiliesAttributes.csv",
     "idcolumn": 0,
     "idtype": "personid",
     "size": [
-      749,
-      30
+      22,
+      311
     ],
     "columns": [
       {
-        "column": 1,
         "name": "UPDBARCHIVEID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 2,
         "name": "OMEID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 3,
         "name": "LabID",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 4,
         "name": "FirstBMI",
         "value": {
-          "type": "int",
+          "type": "real",
           "range": [
             15,
             40
@@ -888,7 +973,6 @@
         }
       },
       {
-        "column": 5,
         "name": "FirstBMIYr",
         "value": {
           "type": "int",
@@ -899,10 +983,9 @@
         }
       },
       {
-        "column": 6,
         "name": "MaxBMI",
         "value": {
-          "type": "int",
+          "type": "real",
           "range": [
             15,
             40
@@ -910,25 +993,22 @@
         }
       },
       {
-        "column": 7,
         "name": "MaxBMIYr",
         "value": {
           "type": "int",
           "range": [
-            1996,
+            1800,
             2005
           ]
         }
       },
       {
-        "column": 8,
         "name": "STATENUM",
         "value": {
           "type": "idtype"
         }
       },
       {
-        "column": 9,
         "name": "race",
         "value": {
           "type": "categorical",
@@ -945,81 +1025,70 @@
         }
       },
       {
-        "column": 10,
         "name": "zip",
         "value": {
           "type": "int",
           "range": [
-            84105,
-            84405
+            0,
+            10000
           ]
         }
       },
       {
-        "column": 11,
         "name": "cause_death",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 12,
         "name": "weapon",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 13,
         "name": "cod_under",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 14,
         "name": "cod_con1",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 15,
         "name": "cod_con2",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 16,
         "name": "cod_con3",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 17,
         "name": "cod_con4",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 18,
         "name": "cod_con5",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 19,
         "name": "cod_con6",
         "value": {
           "type": "string"
         }
       },
       {
-        "column": 20,
         "name": "anxiety",
         "value": {
           "type": "categorical",
@@ -1036,7 +1105,6 @@
         }
       },
       {
-        "column": 21,
         "name": "bipolar",
         "value": {
           "type": "categorical",
@@ -1053,7 +1121,6 @@
         }
       },
       {
-        "column": 22,
         "name": "cancer",
         "value": {
           "type": "categorical",
@@ -1070,7 +1137,6 @@
         }
       },
       {
-        "column": 23,
         "name": "cardiovas",
         "value": {
           "type": "categorical",
@@ -1087,7 +1153,6 @@
         }
       },
       {
-        "column": 24,
         "name": "depression",
         "value": {
           "type": "categorical",
@@ -1104,7 +1169,6 @@
         }
       },
       {
-        "column": 25,
         "name": "personality",
         "value": {
           "type": "categorical",
@@ -1121,7 +1185,6 @@
         }
       },
       {
-        "column": 26,
         "name": "previous_attempt",
         "value": {
           "type": "categorical",
@@ -1138,7 +1201,6 @@
         }
       },
       {
-        "column": 27,
         "name": "psychotic",
         "value": {
           "type": "categorical",
@@ -1155,7 +1217,6 @@
         }
       },
       {
-        "column": 28,
         "name": "PTSD",
         "value": {
           "type": "categorical",
@@ -1172,7 +1233,6 @@
         }
       },
       {
-        "column": 29,
         "name": "schizophrenia",
         "value": {
           "type": "categorical",
@@ -1189,7 +1249,682 @@
         }
       },
       {
-        "column": 30,
+        "name": "substance_abuse",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      }
+    ]
+  },
+    {
+    "name": "FiftyFamiliesAttributes",
+    "type": "table",
+    "id": "FiftyFamiliesAttributes",
+    "separator": ",",
+    "quotechar": "\"",
+    "description": "description_client",
+    "creator": "Carolina Nobre",
+    "path": "FiftyFamiliesAttributes.csv",
+    "idcolumn": 0,
+    "idtype": "personid",
+    "size": [
+      22,
+      757
+    ],
+    "columns": [
+      {
+        "name": "UPDBARCHIVEID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "OMEID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "LabID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "FirstBMI",
+        "value": {
+          "type": "real",
+          "range": [
+            15,
+            40
+          ]
+        }
+      },
+      {
+        "name": "FirstBMIYr",
+        "value": {
+          "type": "int",
+          "range": [
+            1800,
+            2005
+          ]
+        }
+      },
+      {
+        "name": "MaxBMI",
+        "value": {
+          "type": "real",
+          "range": [
+            15,
+            40
+          ]
+        }
+      },
+      {
+        "name": "MaxBMIYr",
+        "value": {
+          "type": "int",
+          "range": [
+            1800,
+            2005
+          ]
+        }
+      },
+      {
+        "name": "STATENUM",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "race",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "zip",
+        "value": {
+          "type": "int",
+          "range": [
+            0,
+            10000
+          ]
+        }
+      },
+      {
+        "name": "cause_death",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "weapon",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_under",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con1",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con2",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con3",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con4",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con5",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con6",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "anxiety",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "bipolar",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "cancer",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "cardiovas",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "depression",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "personality",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "previous_attempt",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "psychotic",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "PTSD",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "schizophrenia",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "substance_abuse",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      }
+    ]
+  },
+      {
+    "name": "AllFamiliesAttributes",
+    "type": "table",
+    "id": "AllFamiliesAttributes",
+    "separator": ",",
+    "quotechar": "\"",
+    "description": "description_client",
+    "creator": "Carolina Nobre",
+    "path": "AllFamiliesAttributes.csv",
+    "idcolumn": 0,
+    "idtype": "personid",
+    "size": [
+      22,
+      19440
+    ],
+    "columns": [
+      {
+        "name": "UPDBARCHIVEID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "OMEID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "LabID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "FirstBMI",
+        "value": {
+          "type": "real",
+          "range": [
+            15,
+            40
+          ]
+        }
+      },
+      {
+        "name": "FirstBMIYr",
+        "value": {
+          "type": "int",
+          "range": [
+            1800,
+            2005
+          ]
+        }
+      },
+      {
+        "name": "MaxBMI",
+        "value": {
+          "type": "real",
+          "range": [
+            15,
+            40
+          ]
+        }
+      },
+      {
+        "name": "MaxBMIYr",
+        "value": {
+          "type": "int",
+          "range": [
+            1996,
+            2005
+          ]
+        }
+      },
+      {
+        "name": "STATENUM",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "race",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "zip",
+        "value": {
+          "type": "int",
+          "range": [
+            0,
+            10000
+          ]
+        }
+      },
+      {
+        "name": "cause_death",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "weapon",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_under",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con1",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con2",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con3",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con4",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con5",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "cod_con6",
+        "value": {
+          "type": "string"
+        }
+      },
+      {
+        "name": "anxiety",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "bipolar",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "cancer",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "cardiovas",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "depression",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "personality",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "previous_attempt",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "psychotic",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "PTSD",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "schizophrenia",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "1",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "0",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
         "name": "substance_abuse",
         "value": {
           "type": "categorical",
