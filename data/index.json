@@ -120,15 +120,19 @@
         }
       },
       {
-        "name": "UPDBid",
+        "name": "ArchivePersonID",
         "value": {
           "type": "idtype"
         }
       },
-      {
-        "name": "ArchivePersonID",
+            {
+        "name": "gen",
         "value": {
-          "type": "idtype"
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
         }
       },
       {
@@ -144,19 +148,19 @@
     ]
   },
   {
-    "name": "FiftyFamiliesDescendAnon",
+    "name": "TenFamiliesDescendAnon",
     "type": "table",
-    "id": "FiftyFamiliesDescendAnon",
+    "id": "TenFamiliesDescendAnon",
     "separator": ",",
     "quotechar": "\"",
     "description": "description_client",
     "creator": "Carolina Nobre",
-    "path": "FiftyFamiliesDescendAnon.csv",
+    "path": "TenFamiliesDescendAnon.csv",
     "idcolumn": 0,
     "idtype": "RelativeID",
     "size": [
-      183,
-      8475
+      5582,
+      14
     ],
     "columns": [
       {
@@ -264,7 +268,149 @@
         }
       },
       {
-        "name": "UPDBid",
+        "name": "ArchivePersonID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+            {
+        "name": "gen",
+        "value": {
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
+        }
+      },
+      {
+        "name": "Age",
+        "value": {
+          "type": "int",
+          "range": [
+            0,
+            90
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "FiftyFamiliesDescendAnon",
+    "type": "table",
+    "id": "FiftyFamiliesDescendAnon",
+    "separator": ",",
+    "quotechar": "\"",
+    "description": "description_client",
+    "creator": "Carolina Nobre",
+    "path": "FiftyFamiliesDescendAnon.csv",
+    "idcolumn": 0,
+    "idtype": "RelativeID",
+    "size": [
+      183,
+      8475
+    ],
+       "columns": [
+      {
+        "name": "PersonID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "KindredID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "MaID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "PaID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "sex",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "F",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "M",
+              "color": "#ff7f0e"
+            }
+          ]
+        }
+      },
+      {
+        "name": "deceased",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "Y",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "N",
+              "color": "#1f77b4"
+            }
+          ]
+        }
+      },
+      {
+        "name": "suicide",
+        "value": {
+          "type": "categorical",
+          "categories": [
+            {
+              "name": "Y",
+              "color": "#1f77b4"
+            },
+            {
+              "name": "N",
+              "color": "#1f77b4"
+            }
+          ]
+        }
+      },
+      {
+        "name": "bdate",
+        "value": {
+          "type": "int",
+          "range": [
+            1768,
+            2014
+          ]
+        }
+      },
+      {
+        "name": "ddate",
+        "value": {
+          "type": "int",
+          "range": [
+            1822,
+            2016
+          ]
+        }
+      },
+      {
+        "name": "OMEID",
+        "value": {
+          "type": "idtype"
+        }
+      },
+      {
+        "name": "LabID",
         "value": {
           "type": "idtype"
         }
@@ -273,6 +419,16 @@
         "name": "ArchivePersonID",
         "value": {
           "type": "idtype"
+        }
+      },
+            {
+        "name": "gen",
+        "value": {
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
         }
       },
       {
@@ -407,15 +563,19 @@
         }
       },
       {
-        "name": "UPDBid",
+        "name": "ArchivePersonID",
         "value": {
           "type": "idtype"
         }
       },
-      {
-        "name": "ArchivePersonID",
+            {
+        "name": "gen",
         "value": {
-          "type": "idtype"
+          "type": "int",
+          "range": [
+            1,
+            9
+          ]
         }
       },
       {
