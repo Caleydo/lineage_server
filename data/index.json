@@ -1,1483 +1,1078 @@
 [
   {
-    "name": "TwoFamiliesDescendAnon",
-    "type": "table",
-    "id": "TwoFamiliesDescendAnon",
-    "separator": ",",
-    "quotechar": "\"",
-    "description": "description_client",
-    "creator": "Carolina Nobre",
-    "path": "TwoFamiliesDescendAnon.csv",
-    "idcolumn": 0,
-    "idtype": "RelativeID",
-    "size": [
-      258,
-      14
-    ],
-    "columns": [
+    "columns":[
       {
-        "name": "PersonID",
-        "value": {
-          "type": "idtype"
+        "name":"FirstBMI",
+        "value":{
+          "range":[
+            15,
+            45
+          ],
+          "type":"int"
         }
       },
       {
-        "name": "KindredID",
-        "value": {
-          "type": "idtype"
+        "name":"MaxBMI",
+        "value":{
+          "range":[
+            15,
+            45
+          ],
+          "type":"int"
         }
       },
       {
-        "name": "MaID",
-        "value": {
-          "type": "idtype"
+        "name":"STATENUM",
+        "value":{
+          "type":"idtype"
         }
       },
       {
-        "name": "PaID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "sex",
-        "value": {
-          "type": "categorical",
-          "categories": [
+        "name":"race",
+        "value":{
+          "categories":[
             {
-              "name": "F",
-              "color": "#1f77b4"
+              "color":"red",
+              "name":"White"
             },
             {
-              "name": "M",
-              "color": "#ff7f0e"
-            }
-          ]
-        }
-      },
-      {
-        "name": "deceased",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
+              "color":"red",
+              "name":"Other"
             },
             {
-              "name": "N",
-              "color": "#1f77b4"
-            }
-          ]
-        }
-      },
-      {
-        "name": "suicide",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
+              "color":"red",
+              "name":"Native Americans"
             },
             {
-              "name": "N",
-              "color": "#1f77b4"
+              "color":"red",
+              "name":"Black"
+            },
+            {
+              "color":"red",
+              "name":"Asian"
+            },
+            {
+              "color":"red",
+              "name":"Hispanic"
             }
-          ]
+          ],
+          "type":"categorical"
         }
       },
       {
-        "name": "bdate",
-        "value": {
-          "type": "int",
-          "range": [
-            1768,
-            2014
-          ]
+        "name":"zip",
+        "value":{
+          "type":"string"
         }
       },
       {
-        "name": "ddate",
-        "value": {
-          "type": "int",
-          "range": [
-            1822,
-            2016
-          ]
+        "name":"cause_death",
+        "value":{
+          "type":"string"
         }
       },
       {
-        "name": "OMEID",
-        "value": {
-          "type": "idtype"
+        "name":"weapon",
+        "value":{
+          "type":"string"
         }
       },
       {
-        "name": "LabID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "ArchivePersonID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "gen",
-        "value": {
-          "type": "int",
-          "range": [
-            1,
-            9
-          ]
-        }
-      },
-      {
-        "name": "Age",
-        "value": {
-          "type": "int",
-          "range": [
+        "name":"AgeFirstBMI",
+        "value":{
+          "range":[
             0,
-            90
-          ]
+            92.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"AgeMaxBMI",
+        "value":{
+          "range":[
+            0,
+            92.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Bipolar",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"FALSE"
+            },
+            {
+              "color":"red",
+              "name":"TRUE"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"Age1D_Bipolar",
+        "value":{
+          "range":[
+            0,
+            77.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Nr.Diag_Bipolar",
+        "value":{
+          "range":[
+            0,
+            168.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Depression",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"FALSE"
+            },
+            {
+              "color":"red",
+              "name":"TRUE"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"Age1D_Depression",
+        "value":{
+          "range":[
+            0,
+            90.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Nr.Diag_Depression",
+        "value":{
+          "range":[
+            0,
+            240.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Asthma",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"FALSE"
+            },
+            {
+              "color":"red",
+              "name":"TRUE"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"Age1D_Asthma",
+        "value":{
+          "range":[
+            0,
+            90.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Nr.Diag_Asthma",
+        "value":{
+          "range":[
+            0,
+            23.0
+          ],
+          "type":"int"
         }
       }
-    ]
-  },
-  {
-    "name": "TenFamiliesDescendAnon",
-    "type": "table",
-    "id": "TenFamiliesDescendAnon",
-    "separator": ",",
-    "quotechar": "\"",
-    "description": "description_client",
-    "creator": "Carolina Nobre",
-    "path": "TenFamiliesDescendAnon.csv",
-    "idcolumn": 0,
-    "idtype": "RelativeID",
-    "size": [
-      5582,
-      14
     ],
-    "columns": [
-      {
-        "name": "PersonID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "KindredID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "MaID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "PaID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "sex",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "F",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "M",
-              "color": "#ff7f0e"
-            }
-          ]
-        }
-      },
-      {
-        "name": "deceased",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "N",
-              "color": "#1f77b4"
-            }
-          ]
-        }
-      },
-      {
-        "name": "suicide",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "N",
-              "color": "#1f77b4"
-            }
-          ]
-        }
-      },
-      {
-        "name": "bdate",
-        "value": {
-          "type": "int",
-          "range": [
-            1768,
-            2014
-          ]
-        }
-      },
-      {
-        "name": "ddate",
-        "value": {
-          "type": "int",
-          "range": [
-            1822,
-            2016
-          ]
-        }
-      },
-      {
-        "name": "OMEID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "LabID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "ArchivePersonID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "gen",
-        "value": {
-          "type": "int",
-          "range": [
-            1,
-            9
-          ]
-        }
-      },
-      {
-        "name": "Age",
-        "value": {
-          "type": "int",
-          "range": [
-            0,
-            90
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "name": "FiftyFamiliesDescendAnon",
-    "type": "table",
-    "id": "FiftyFamiliesDescendAnon",
-    "separator": ",",
-    "quotechar": "\"",
-    "description": "description_client",
-    "creator": "Carolina Nobre",
-    "path": "FiftyFamiliesDescendAnon.csv",
-    "idcolumn": 0,
-    "idtype": "RelativeID",
-    "size": [
-      183,
-      8475
-    ],
-    "columns": [
-      {
-        "name": "PersonID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "KindredID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "MaID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "PaID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "sex",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "F",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "M",
-              "color": "#ff7f0e"
-            }
-          ]
-        }
-      },
-      {
-        "name": "deceased",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "N",
-              "color": "#1f77b4"
-            }
-          ]
-        }
-      },
-      {
-        "name": "suicide",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "N",
-              "color": "#1f77b4"
-            }
-          ]
-        }
-      },
-      {
-        "name": "bdate",
-        "value": {
-          "type": "int",
-          "range": [
-            1768,
-            2014
-          ]
-        }
-      },
-      {
-        "name": "ddate",
-        "value": {
-          "type": "int",
-          "range": [
-            1822,
-            2016
-          ]
-        }
-      },
-      {
-        "name": "OMEID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "LabID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "ArchivePersonID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "gen",
-        "value": {
-          "type": "int",
-          "range": [
-            1,
-            9
-          ]
-        }
-      },
-      {
-        "name": "Age",
-        "value": {
-          "type": "int",
-          "range": [
-            0,
-            90
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "name": "AllFamiliesDescendAnon",
-    "type": "table",
-    "id": "AllFamiliesDescendAnon",
-    "separator": ",",
-    "description": "description_client",
-    "creator": "Carolina Nobre",
-    "path": "AllFamiliesDescendAnon.csv",
-    "idcolumn": 0,
-    "idtype": "RelativeID",
-    "size": [
-      183,
-      91183
-    ],
-    "columns": [
-      {
-        "name": "PersonID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "KindredID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "MaID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "PaID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "sex",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "F",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "M",
-              "color": "#ff7f0e"
-            }
-          ]
-        }
-      },
-      {
-        "name": "deceased",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "N",
-              "color": "#1f77b4"
-            }
-          ]
-        }
-      },
-      {
-        "name": "suicide",
-        "value": {
-          "type": "categorical",
-          "categories": [
-            {
-              "name": "Y",
-              "color": "#1f77b4"
-            },
-            {
-              "name": "N",
-              "color": "#1f77b4"
-            }
-          ]
-        }
-      },
-      {
-        "name": "bdate",
-        "value": {
-          "type": "int",
-          "range": [
-            1768,
-            2014
-          ]
-        }
-      },
-      {
-        "name": "ddate",
-        "value": {
-          "type": "int",
-          "range": [
-            1822,
-            2016
-          ]
-        }
-      },
-      {
-        "name": "OMEID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "LabID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "ArchivePersonID",
-        "value": {
-          "type": "idtype"
-        }
-      },
-      {
-        "name": "gen",
-        "value": {
-          "type": "int",
-          "range": [
-            1,
-            9
-          ]
-        }
-      },
-      {
-        "name": "Age",
-        "value": {
-          "type": "int",
-          "range": [
-            0,
-            90
-          ]
-        }
-      }
-    ]
-  },
-  {
-    "name": "AllFamiliesAttributes",
-    "size": [
+    "creator":"autogenerated",
+    "description":"autogenerated",
+    "id":"AllFamiliesAttributes",
+    "idcolumn":0,
+    "idtype":"personid",
+    "name":"AllFamiliesAttributes",
+    "path":"AllFamiliesAttributes.csv",
+    "quotechar":"\"",
+    "separator":",",
+    "size":[
       19440,
       18
     ],
-    "columns": [
-      {
-        "value": {
-          "range": [
-            15,
-            45
-          ],
-          "type": "int"
-        },
-        "name": "FirstBMI"
-      },
-      {
-        "value": {
-          "range": [
-            15,
-            45
-          ],
-          "type": "int"
-        },
-        "name": "MaxBMI"
-      },
-      {
-        "value": {
-          "type": "idtype"
-        },
-        "name": "STATENUM"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "White"
-            },
-            {
-              "color": "red",
-              "name": "Other"
-            },
-            {
-              "color": "red",
-              "name": "Native Americans"
-            },
-            {
-              "color": "red",
-              "name": "Black"
-            },
-            {
-              "color": "red",
-              "name": "Asian"
-            },
-            {
-              "color": "red",
-              "name": "Hispanic"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "race"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "zip"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "cause_death"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "weapon"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            92.0
-          ],
-          "type": "int"
-        },
-        "name": "AgeFirstBMI"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            92.0
-          ],
-          "type": "int"
-        },
-        "name": "AgeMaxBMI"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "FALSE"
-            },
-            {
-              "color": "red",
-              "name": "TRUE"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "Bipolar"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            77.0
-          ],
-          "type": "int"
-        },
-        "name": "Age1D_Bipolar"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            168.0
-          ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Bipolar"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "FALSE"
-            },
-            {
-              "color": "red",
-              "name": "TRUE"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "Depression"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            90.0
-          ],
-          "type": "int"
-        },
-        "name": "Age1D_Depression"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            240.0
-          ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Depression"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "FALSE"
-            },
-            {
-              "color": "red",
-              "name": "TRUE"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "Asthma"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            90.0
-          ],
-          "type": "int"
-        },
-        "name": "Age1D_Asthma"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            23.0
-          ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Asthma"
-      }
-    ],
-    "id": "AllFamiliesAttributes",
-    "type": "table",
-    "quotechar": "\"",
-    "path": "AllFamiliesAttributes.csv",
-    "creator": "autogenerated",
-    "idcolumn": 0,
-    "description": "autogenerated",
-    "idtype": "personid",
-    "separator": ","
+    "type":"table"
   },
   {
-    "name": "FiftyFamiliesAttributes",
-    "size": [
-      757,
-      18
-    ],
-    "columns": [
+    "columns":[
       {
-        "value": {
-          "range": [
-            15,
-            45
-          ],
-          "type": "int"
-        },
-        "name": "FirstBMI"
+        "name":"RelativeID",
+        "value":{
+          "type":"idtype"
+        }
       },
       {
-        "value": {
-          "range": [
-            15,
-            45
-          ],
-          "type": "int"
-        },
-        "name": "MaxBMI"
+        "name":"KindredID",
+        "value":{
+          "type":"idtype"
+        }
       },
       {
-        "value": {
-          "type": "idtype"
-        },
-        "name": "STATENUM"
+        "name":"MaID",
+        "value":{
+          "type":"idtype"
+        }
       },
       {
-        "value": {
-          "categories": [
+        "name":"PaID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"sex",
+        "value":{
+          "categories":[
             {
-              "color": "red",
-              "name": "White"
+              "color":"red",
+              "name":"M"
             },
             {
-              "color": "red",
-              "name": "Other"
-            },
-            {
-              "color": "red",
-              "name": "Native Americans"
-            },
-            {
-              "color": "red",
-              "name": "Black"
-            },
-            {
-              "color": "red",
-              "name": "Asian"
-            },
-            {
-              "color": "red",
-              "name": "Hispanic"
+              "color":"red",
+              "name":"F"
             }
           ],
-          "type": "categorical"
-        },
-        "name": "race"
+          "type":"categorical"
+        }
       },
       {
-        "value": {
-          "type": "string"
-        },
-        "name": "zip"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "cause_death"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "weapon"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            92.0
-          ],
-          "type": "int"
-        },
-        "name": "AgeFirstBMI"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            92.0
-          ],
-          "type": "int"
-        },
-        "name": "AgeMaxBMI"
-      },
-      {
-        "value": {
-          "categories": [
+        "name":"deceased",
+        "value":{
+          "categories":[
             {
-              "color": "red",
-              "name": "FALSE"
+              "color":"red",
+              "name":"Y"
             },
             {
-              "color": "red",
-              "name": "TRUE"
+              "color":"red",
+              "name":"N"
             }
           ],
-          "type": "categorical"
-        },
-        "name": "Bipolar"
+          "type":"categorical"
+        }
       },
       {
-        "value": {
-          "range": [
-            0,
-            77.0
-          ],
-          "type": "int"
-        },
-        "name": "Age1D_Bipolar"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            168.0
-          ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Bipolar"
-      },
-      {
-        "value": {
-          "categories": [
+        "name":"suicide",
+        "value":{
+          "categories":[
             {
-              "color": "red",
-              "name": "FALSE"
+              "color":"red",
+              "name":"N"
             },
             {
-              "color": "red",
-              "name": "TRUE"
+              "color":"red",
+              "name":"Y"
             }
           ],
-          "type": "categorical"
-        },
-        "name": "Depression"
+          "type":"categorical"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"bdate",
+        "value":{
+          "range":[
             0,
-            90.0
+            2015.0
           ],
-          "type": "int"
-        },
-        "name": "Age1D_Depression"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"ddate",
+        "value":{
+          "range":[
             0,
-            240.0
+            2016.0
           ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Depression"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "FALSE"
-            },
-            {
-              "color": "red",
-              "name": "TRUE"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "Asthma"
-      },
-      {
-        "value": {
-          "range": [
+        "name":"OMEID",
+        "value":{
+          "range":[
             0,
-            90.0
+            201602149.0
           ],
-          "type": "int"
-        },
-        "name": "Age1D_Asthma"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"LabID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"ArchivePersonID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"gen",
+        "value":{
+          "range":[
             0,
-            23.0
+            11.0
           ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Asthma"
+          "type":"int"
+        }
+      },
+      {
+        "name":"Age",
+        "value":{
+          "range":[
+            0,
+            120.0
+          ],
+          "type":"int"
+        }
       }
     ],
-    "id": "FiftyFamiliesAttributes",
-    "type": "table",
-    "quotechar": "\"",
-    "path": "FiftyFamiliesAttributes.csv",
-    "creator": "autogenerated",
-    "idcolumn": 0,
-    "description": "autogenerated",
-    "idtype": "personid",
-    "separator": ","
+    "creator":"autogenerated",
+    "description":"autogenerated",
+    "id":"AllFamiliesDescend",
+    "idcolumn":0,
+    "idtype":"personid",
+    "name":"AllFamiliesDescend",
+    "path":"AllFamiliesDescend.csv",
+    "quotechar":"\"",
+    "separator":",",
+    "size":[
+      118431,
+      14
+    ],
+    "type":"table"
   },
   {
-    "name": "TenFamiliesAttributes",
-    "size": [
+    "columns":[
+      {
+        "name":"RelativeID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"KindredID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"MaID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"PaID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"sex",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"M"
+            },
+            {
+              "color":"red",
+              "name":"F"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"deceased",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"Y"
+            },
+            {
+              "color":"red",
+              "name":"N"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"suicide",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"N"
+            },
+            {
+              "color":"red",
+              "name":"Y"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"bdate",
+        "value":{
+          "range":[
+            0,
+            2015.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"ddate",
+        "value":{
+          "range":[
+            0,
+            2016.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"OMEID",
+        "value":{
+          "range":[
+            0,
+            201602105.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"LabID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"ArchivePersonID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"gen",
+        "value":{
+          "range":[
+            0,
+            11.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Age",
+        "value":{
+          "range":[
+            0,
+            120.0
+          ],
+          "type":"int"
+        }
+      }
+    ],
+    "creator":"autogenerated",
+    "description":"autogenerated",
+    "id":"TenFamiliesDescend",
+    "idcolumn":0,
+    "idtype":"personid",
+    "name":"TenFamiliesDescend",
+    "path":"TenFamiliesDescend.csv",
+    "quotechar":"\"",
+    "separator":",",
+    "size":[
+      5944,
+      14
+    ],
+    "type":"table"
+  },
+  {
+    "columns":[
+      {
+        "name":"RelativeID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"KindredID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"MaID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"PaID",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"sex",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"M"
+            },
+            {
+              "color":"red",
+              "name":"F"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"deceased",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"Y"
+            },
+            {
+              "color":"red",
+              "name":"N"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"suicide",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"N"
+            },
+            {
+              "color":"red",
+              "name":"Y"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"bdate",
+        "value":{
+          "range":[
+            0,
+            2018.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"ddate",
+        "value":{
+          "range":[
+            0,
+            2021.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"gen",
+        "value":{
+          "range":[
+            0,
+            11.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Age",
+        "value":{
+          "range":[
+            0,
+            120.0
+          ],
+          "type":"int"
+        }
+      }
+    ],
+    "creator":"autogenerated",
+    "description":"autogenerated",
+    "id":"TenFamiliesDescendAnon",
+    "idcolumn":0,
+    "idtype":"personid",
+    "name":"TenFamiliesDescendAnon",
+    "path":"TenFamiliesDescendAnon.csv",
+    "quotechar":"\"",
+    "separator":",",
+    "size":[
+      5556,
+      11
+    ],
+    "type":"table"
+  },
+  {
+    "columns":[
+      {
+        "name":"FirstBMI",
+        "value":{
+          "range":[
+            15,
+            45
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"MaxBMI",
+        "value":{
+          "range":[
+            15,
+            45
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"STATENUM",
+        "value":{
+          "type":"idtype"
+        }
+      },
+      {
+        "name":"race",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"White"
+            },
+            {
+              "color":"red",
+              "name":"Native Americans"
+            },
+            {
+              "color":"red",
+              "name":"Asian"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"zip",
+        "value":{
+          "type":"string"
+        }
+      },
+      {
+        "name":"cause_death",
+        "value":{
+          "type":"string"
+        }
+      },
+      {
+        "name":"weapon",
+        "value":{
+          "type":"string"
+        }
+      },
+      {
+        "name":"AgeFirstBMI",
+        "value":{
+          "range":[
+            0,
+            80.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"AgeMaxBMI",
+        "value":{
+          "range":[
+            0,
+            80.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Bipolar",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"FALSE"
+            },
+            {
+              "color":"red",
+              "name":"TRUE"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"Age1D_Bipolar",
+        "value":{
+          "range":[
+            0,
+            55.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Nr.Diag_Bipolar",
+        "value":{
+          "range":[
+            0,
+            15.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Depression",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"FALSE"
+            },
+            {
+              "color":"red",
+              "name":"TRUE"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"Age1D_Depression",
+        "value":{
+          "range":[
+            0,
+            76.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Nr.Diag_Depression",
+        "value":{
+          "range":[
+            0,
+            66.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Asthma",
+        "value":{
+          "categories":[
+            {
+              "color":"red",
+              "name":"FALSE"
+            },
+            {
+              "color":"red",
+              "name":"TRUE"
+            }
+          ],
+          "type":"categorical"
+        }
+      },
+      {
+        "name":"Age1D_Asthma",
+        "value":{
+          "range":[
+            0,
+            56.0
+          ],
+          "type":"int"
+        }
+      },
+      {
+        "name":"Nr.Diag_Asthma",
+        "value":{
+          "range":[
+            0,
+            2.0
+          ],
+          "type":"int"
+        }
+      }
+    ],
+    "creator":"autogenerated",
+    "description":"autogenerated",
+    "id":"TenFamiliesAttr",
+    "idcolumn":0,
+    "idtype":"personid",
+    "name":"TenFamiliesAttr",
+    "path":"TenFamiliesAttr.csv",
+    "quotechar":"\"",
+    "separator":",",
+    "size":[
       311,
       18
     ],
-    "columns": [
-      {
-        "value": {
-          "range": [
-            15,
-            45
-          ],
-          "type": "int"
-        },
-        "name": "FirstBMI"
-      },
-      {
-        "value": {
-          "range": [
-            15,
-            45
-          ],
-          "type": "int"
-        },
-        "name": "MaxBMI"
-      },
-      {
-        "value": {
-          "type": "idtype"
-        },
-        "name": "STATENUM"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "White"
-            },
-            {
-              "color": "red",
-              "name": "Other"
-            },
-            {
-              "color": "red",
-              "name": "Native Americans"
-            },
-            {
-              "color": "red",
-              "name": "Black"
-            },
-            {
-              "color": "red",
-              "name": "Asian"
-            },
-            {
-              "color": "red",
-              "name": "Hispanic"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "race"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "zip"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "cause_death"
-      },
-      {
-        "value": {
-          "type": "string"
-        },
-        "name": "weapon"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            92.0
-          ],
-          "type": "int"
-        },
-        "name": "AgeFirstBMI"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            92.0
-          ],
-          "type": "int"
-        },
-        "name": "AgeMaxBMI"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "FALSE"
-            },
-            {
-              "color": "red",
-              "name": "TRUE"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "Bipolar"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            77.0
-          ],
-          "type": "int"
-        },
-        "name": "Age1D_Bipolar"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            168.0
-          ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Bipolar"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "FALSE"
-            },
-            {
-              "color": "red",
-              "name": "TRUE"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "Depression"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            90.0
-          ],
-          "type": "int"
-        },
-        "name": "Age1D_Depression"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            240.0
-          ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Depression"
-      },
-      {
-        "value": {
-          "categories": [
-            {
-              "color": "red",
-              "name": "FALSE"
-            },
-            {
-              "color": "red",
-              "name": "TRUE"
-            }
-          ],
-          "type": "categorical"
-        },
-        "name": "Asthma"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            90.0
-          ],
-          "type": "int"
-        },
-        "name": "Age1D_Asthma"
-      },
-      {
-        "value": {
-          "range": [
-            0,
-            23.0
-          ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Asthma"
-      }
-    ],
-    "id": "TenFamiliesAttributes",
-    "type": "table",
-    "quotechar": "\"",
-    "path": "TenFamiliesAttributes.csv",
-    "creator": "autogenerated",
-    "idcolumn": 0,
-    "description": "autogenerated",
-    "idtype": "personid",
-    "separator": ","
+    "type":"table"
   },
   {
-    "name": "TwoFamiliesAttributes",
-    "size": [
-      22,
-      18
-    ],
-    "columns": [
+    "columns":[
       {
-        "value": {
-          "range": [
+        "name":"FirstBMI",
+        "value":{
+          "range":[
             15,
             45
           ],
-          "type": "int"
-        },
-        "name": "FirstBMI"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"MaxBMI",
+        "value":{
+          "range":[
             15,
             45
           ],
-          "type": "int"
-        },
-        "name": "MaxBMI"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "type": "idtype"
-        },
-        "name": "STATENUM"
+        "name":"STATENUM",
+        "value":{
+          "type":"idtype"
+        }
       },
       {
-        "value": {
-          "categories": [
+        "name":"race",
+        "value":{
+          "categories":[
             {
-              "color": "red",
-              "name": "White"
+              "color":"red",
+              "name":"White"
             },
             {
-              "color": "red",
-              "name": "Other"
+              "color":"red",
+              "name":"Native Americans"
             },
             {
-              "color": "red",
-              "name": "Native Americans"
-            },
-            {
-              "color": "red",
-              "name": "Black"
-            },
-            {
-              "color": "red",
-              "name": "Asian"
-            },
-            {
-              "color": "red",
-              "name": "Hispanic"
+              "color":"red",
+              "name":"Asian"
             }
           ],
-          "type": "categorical"
-        },
-        "name": "race"
+          "type":"categorical"
+        }
       },
       {
-        "value": {
-          "type": "string"
-        },
-        "name": "zip"
+        "name":"zip",
+        "value":{
+          "type":"string"
+        }
       },
       {
-        "value": {
-          "type": "string"
-        },
-        "name": "cause_death"
+        "name":"cause_death",
+        "value":{
+          "type":"string"
+        }
       },
       {
-        "value": {
-          "type": "string"
-        },
-        "name": "weapon"
+        "name":"weapon",
+        "value":{
+          "type":"string"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"AgeFirstBMI",
+        "value":{
+          "range":[
             0,
-            92.0
+            80.0
           ],
-          "type": "int"
-        },
-        "name": "AgeFirstBMI"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"AgeMaxBMI",
+        "value":{
+          "range":[
             0,
-            92.0
+            80.0
           ],
-          "type": "int"
-        },
-        "name": "AgeMaxBMI"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "categories": [
+        "name":"Bipolar",
+        "value":{
+          "categories":[
             {
-              "color": "red",
-              "name": "FALSE"
+              "color":"red",
+              "name":"FALSE"
             },
             {
-              "color": "red",
-              "name": "TRUE"
+              "color":"red",
+              "name":"TRUE"
             }
           ],
-          "type": "categorical"
-        },
-        "name": "Bipolar"
+          "type":"categorical"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"Age1D_Bipolar",
+        "value":{
+          "range":[
             0,
-            77.0
+            55.0
           ],
-          "type": "int"
-        },
-        "name": "Age1D_Bipolar"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"Nr.Diag_Bipolar",
+        "value":{
+          "range":[
             0,
-            168.0
+            15.0
           ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Bipolar"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "categories": [
+        "name":"Depression",
+        "value":{
+          "categories":[
             {
-              "color": "red",
-              "name": "FALSE"
+              "color":"red",
+              "name":"FALSE"
             },
             {
-              "color": "red",
-              "name": "TRUE"
+              "color":"red",
+              "name":"TRUE"
             }
           ],
-          "type": "categorical"
-        },
-        "name": "Depression"
+          "type":"categorical"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"Age1D_Depression",
+        "value":{
+          "range":[
             0,
-            90.0
+            76.0
           ],
-          "type": "int"
-        },
-        "name": "Age1D_Depression"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"Nr.Diag_Depression",
+        "value":{
+          "range":[
             0,
-            240.0
+            66.0
           ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Depression"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "categories": [
+        "name":"Asthma",
+        "value":{
+          "categories":[
             {
-              "color": "red",
-              "name": "FALSE"
+              "color":"red",
+              "name":"FALSE"
             },
             {
-              "color": "red",
-              "name": "TRUE"
+              "color":"red",
+              "name":"TRUE"
             }
           ],
-          "type": "categorical"
-        },
-        "name": "Asthma"
+          "type":"categorical"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"Age1D_Asthma",
+        "value":{
+          "range":[
             0,
-            90.0
+            56.0
           ],
-          "type": "int"
-        },
-        "name": "Age1D_Asthma"
+          "type":"int"
+        }
       },
       {
-        "value": {
-          "range": [
+        "name":"Nr.Diag_Asthma",
+        "value":{
+          "range":[
             0,
-            23.0
+            2.0
           ],
-          "type": "int"
-        },
-        "name": "Nr.Diag_Asthma"
+          "type":"int"
+        }
       }
     ],
-    "id": "TwoFamiliesAttributes",
-    "type": "table",
-    "quotechar": "\"",
-    "path": "TwoFamiliesAttributes.csv",
-    "creator": "autogenerated",
-    "idcolumn": 0,
-    "description": "autogenerated",
-    "idtype": "personid",
-    "separator": ","
+    "creator":"autogenerated",
+    "description":"autogenerated",
+    "id":"TenFamiliesAttrAnon",
+    "idcolumn":0,
+    "idtype":"personid",
+    "name":"TenFamiliesAttrAnon",
+    "path":"TenFamiliesAttrAnon.csv",
+    "quotechar":"\"",
+    "separator":",",
+    "size":[
+      311,
+      18
+    ],
+    "type":"table"
   }
 ]
-
-
