@@ -103,11 +103,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -139,11 +139,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -175,11 +175,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -747,11 +747,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -783,11 +783,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -819,11 +819,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -957,11 +957,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -993,11 +993,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
@@ -1029,11 +1029,11 @@
           "categories":[
             {
               "color":"red",
-              "name":"FALSE"
+              "name":"False"
             },
             {
               "color":"red",
-              "name":"TRUE"
+              "name":"True"
             }
           ],
           "type":"categorical"
