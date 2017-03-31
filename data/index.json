@@ -34,6 +34,26 @@
             {
               "color":"red",
               "name":"White"
+            },
+            {
+              "color":"red",
+              "name":"Other"
+            },
+            {
+              "color":"red",
+              "name":"Native Americans"
+            },
+            {
+              "color":"red",
+              "name":"Black"
+            },
+            {
+              "color":"red",
+              "name":"Asian"
+            },
+            {
+              "color":"red",
+              "name":"Hispanic"
             }
           ],
           "type":"categorical"
@@ -462,6 +482,26 @@
             {
               "color":"red",
               "name":"White"
+            },
+            {
+              "color":"red",
+              "name":"Other"
+            },
+            {
+              "color":"red",
+              "name":"Native Americans"
+            },
+            {
+              "color":"red",
+              "name":"Black"
+            },
+            {
+              "color":"red",
+              "name":"Asian"
+            },
+            {
+              "color":"red",
+              "name":"Hispanic"
             }
           ],
           "type":"categorical"
@@ -1102,6 +1142,26 @@
             {
               "color":"red",
               "name":"White"
+            },
+            {
+              "color":"red",
+              "name":"Other"
+            },
+            {
+              "color":"red",
+              "name":"Native Americans"
+            },
+            {
+              "color":"red",
+              "name":"Black"
+            },
+            {
+              "color":"red",
+              "name":"Asian"
+            },
+            {
+              "color":"red",
+              "name":"Hispanic"
             }
           ],
           "type":"categorical"
@@ -1260,15 +1320,15 @@
     ],
     "creator":"Carolina Nobre",
     "description":"Test Families",
-    "id":"TestFamiliesAttr",
+    "id":"TwoFamiliesAttrAnon",
     "idcolumn":0,
     "idtype":"personid",
-    "name":"TestFamiliesAttr",
-    "path":"TestFamiliesAttr.csv",
+    "name":"TwoFamiliesAttrAnon",
+    "path":"TwoFamiliesAttrAnon.csv",
     "quotechar":"\"",
     "separator":",",
     "size":[
-      56,
+      151,
       18
     ],
     "type":"table"
@@ -1390,15 +1450,15 @@
     ],
     "creator":"Carolina Nobre",
     "description":"Test Families Descend",
-    "id":"TestFamiliesDescend",
+    "id":"TwoFamiliesDescendAnon",
     "idcolumn":0,
     "idtype":"personid",
-    "name":"TestFamiliesDescend",
-    "path":"TestFamiliesDescend.csv",
+    "name":"TwoFamiliesDescendAnon",
+    "path":"TwoFamiliesDescendAnon.csv",
     "quotechar":"\"",
     "separator":",",
     "size":[
-      57,
+      1742,
       11
     ],
     "type":"table"
