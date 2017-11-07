@@ -219,6 +219,7 @@
     "path":"TenFamiliesAttr.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,
     "size":[
       160,
       18
@@ -441,6 +442,7 @@
     "path":"AllFamiliesAttributes.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,
     "size":[
       19440,
       18
@@ -667,6 +669,7 @@
     "path":"TenFamiliesAttrAnon.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,
     "size":[
       160,
       18
@@ -797,6 +800,7 @@
     "path":"TenFamiliesDescendAnon.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,
     "size":[
       1742,
       11
@@ -949,6 +953,7 @@
     "path":"TenFamiliesDescend.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,
     "size":[
       1889,
       14
@@ -1101,6 +1106,7 @@
     "path":"AllFamiliesDescend.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,
     "size":[
       118431,
       14
@@ -1327,6 +1333,7 @@
     "path":"TwoFamiliesAttrAnon.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,
     "size":[
       151,
       18
@@ -1457,6 +1464,7 @@
     "path":"TwoFamiliesDescendAnon.csv",
     "quotechar":"\"",
     "separator":",",
+    "loadAtOnce": true,	
     "size":[
       1742,
       11
