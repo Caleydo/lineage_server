@@ -11,7 +11,6 @@ def phovea(registry):
   :param registry:
   """
   # generator-phovea:begin
-  registry.append('namespace', 'hello_world', 'lineage_server.hello_world', {'namespace': '/api/hello_world'})
   # generator-phovea:end
   pass
 
