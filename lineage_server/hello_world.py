@@ -13,6 +13,7 @@ from phovea_server.util import jsonify
 app = Namespace(__name__)
 _log = logging.getLogger(__name__)
 
+
 @app.route('/', methods=['GET'])
 def _hello():
     return jsonify({'message': 'Hello World'})
