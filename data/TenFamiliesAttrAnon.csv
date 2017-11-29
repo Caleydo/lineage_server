@@ -1,161 +1,161 @@
-personid,FirstBMI,MaxBMI,STATENUM,race,zip,cause_death,weapon,AgeFirstBMI,AgeMaxBMI,Bipolar,Age1D_Bipolar,Nr.Diag_Bipolar,Depression,Age1D_Depression,Nr.Diag_Depression,Asthma,Age1D_Asthma,Nr.Diag_Asthma
-29868,,,1980000646,,,,,,,False,,0,False,,0,False,,0
-58848,,,1950000090,,,,,,,False,,0,False,,0,False,,0
-27814,,,1968005777,,,,,,,False,,0,False,,0,False,,0
-60509,,,1977006181,,,,,,,False,,0,False,,0,False,,0
-60825,,,1976002272,,,,,,,False,,0,False,,0,False,,0
-10762,,,1969006205,,,,,,,False,,0,False,,0,False,,0
-18996,,,1980000163,,,,,,,False,,0,False,,0,False,,0
-62943,,,1982005360,,,,,,,False,,0,False,,0,False,,0
-65739,,,1991003622,,,,,,,False,,0,False,,0,False,,0
-17245,,,1977005421,,,,,,,False,,0,False,,0,False,,0
-36257,,,1950000022,,,,,,,False,,0,False,,0,False,,0
-65130,,,1982003169,,,,,,,False,,0,False,,0,False,,0
-9353,,,1956000029,,,,,,,False,,0,False,,0,False,,0
-15383,,,1981006493,,,,,,,False,,0,False,,0,False,,0
-17969,,,1967000211,,,,,,,False,,0,False,,0,False,,0
-18801,,,1984005202,,,,,,,False,,0,False,,0,False,,0
-24353,,,1994004076,,,,,,,False,,0,False,,0,False,,0
-2819,,,1996002177,,,,,,,False,,0,False,,0,False,,0
-8264,,,1993004946,,,,,,,False,,0,False,,0,False,,0
-6457,,,1987000318,,,,,,,False,,0,False,,0,False,,0
-52600,,,1979003606,,,,,,,False,,0,False,,0,False,,0
-60065,,,1979003412,,,,,,,False,,0,False,,0,False,,0
-66253,,,1989009411,,,,,,,False,,0,False,,0,False,,0
-15779,,,1987007317,,,,,,,False,,0,False,,0,False,,0
-31560,,,1991008337,,,,,,,False,,0,False,,0,False,,0
-50968,,,1990006729,,,,,,,False,,0,False,,0,False,,0
-1519,,,1995003689,,,,,,,False,,0,False,,0,False,,0
-25233,,,1991009308,,,,,,,False,,0,False,,0,False,,0
-66329,,,1989004219,,,,,,,False,,0,False,,0,False,,0
-66330,,,1982004662,,,,,,,False,,0,False,,0,False,,0
-26090,,,1990002921,,,,,,,False,,0,False,,0,False,,0
-57192,,,1991008101,,,,,,,False,,0,False,,0,False,,0
-4134,,,1992002236,,,,,,,False,,0,False,,0,False,,0
-37541,,,1993008237,,,,,,,False,,0,False,,0,False,,0
-41793,,,1994007412,,,,,,,False,,0,False,,0,False,,0
-41824,,,1993009438,,,,,,,False,,0,False,,0,False,,0
-10894,,,1994006918,,,,,,,False,,0,False,,0,False,,0
-28400,,,1995001045,,,,,,,False,,0,False,,0,False,,0
-31968,,,1995002066,,,,,,,False,,0,False,,0,False,,0
-39167,,,1995004002,,,,,,,False,,0,False,,0,False,,0
-58599,,,1982007954,,,,,,,False,,0,False,,0,False,,0
-39809,,,1991003437,,,,,,,False,,0,False,,0,False,,0
-52220,,,1980002415,,,,,,,False,,0,False,,0,False,,0
-53706,,,1980005292,,,,,,,False,,0,False,,0,False,,0
-54490,,,1980006847,,,,,,,False,,0,False,,0,False,,0
-60699,,,1982002032,,,,,,,False,,0,False,,0,False,,0
-60900,,,1982002350,,,,,,,False,,0,False,,0,False,,0
-61032,,,1982002703,,,,,,,False,,0,False,,0,False,,0
-63452,,,1982007809,,,,,,,False,,0,False,,0,False,,0
-213,,,1983008246,,,,,,,False,,0,False,,0,False,,0
-17216,,,1987003252,,,,,,,False,,0,False,,0,False,,0
-23038,,,1988005254,,,,,,,False,,0,False,,0,False,,0
-4894,,,1965002339,,,,,,,False,,0,False,,0,False,,0
-47028,,,1975005327,,,,,,,False,,0,False,,0,False,,0
-54134,,,1977000475,,,,,,,False,,0,False,,0,False,,0
-56523,,,1977006076,,,,,,,False,,0,False,,0,False,,0
-9568,,,1977001324,,,,,,,False,,0,False,,0,False,,0
-53265,,,1956002205,,,,,,,False,,0,False,,0,False,,0
-66690,,,1996000767,White,,,,,,False,,0,False,,0,False,,0
-66941,,,1997001362,White,,,,,,False,,0,False,,0,False,,0
-14621,,,1997001430,White,,,,,,False,,0,False,,0,False,,0
-1967,,,1998001771,White,84088,,,,,False,,0,False,,0,False,,0
-11514,,,1998002675,White,,,,,,False,,0,False,,0,False,,0
-34234,,,1998007232,White,84074,,,,,False,,0,False,,0,False,,0
-48862,,,1998007714,White,,,,,,False,,0,True,53,1,False,,0
-3603,,,1998009585,White,84601,,,,,False,,0,True,24,2,False,,0
-56687,24.27378082,24.27378082,2000003092,White,84043,GUNSHOT WOUND TO THE HEAD AND COMPLICATIONS,Rifle,47,47,False,,0,True,49,4,False,,0
-50614,,,2000001605,White,84094,GUNSHOT WOUND OF LEFT CHEST/UPPER ABDOMEN,Rifle,,,False,,0,False,,0,False,,0
-16926,190410843,190410843,2000004603,White,84660,GUNSHOT WOUNDS (2) OF HEAD,Rifle,23,23,False,,0,False,,0,False,,0
-27120,38.73278427,38.73278427,2000007133,White,84107,ASPHYXIA,,28,28,False,,0,True,33,8,False,,0
-61046,29.29166603,29.29166603,2000008019,White,84118,"MIXED DRUG POISONING - METOPROLOL, VERAPAMIL,",,39,39,False,,0,True,40,10,False,,0
-52789,19.12835503,21.76674843,2001000644,White,84401,GUNSHOT WOUND TO THE HEAD,Semi-Auto,30,30,False,,0,True,30,1,False,,0
-19934,22.80493164,22.80493164,2001000969,White,84121,HANGING,Ligature,26,26,False,,0,True,26,1,False,,0
-26695,,,2001004991,White,84116,GUNSHOT WOUND TO THE HEAD,Revolver,,,False,,0,False,,0,False,,0
-39746,,,2001005938,White,84084,GUNSHOT WOUND TO THE HEAD,Pistol,,,False,,0,False,,0,False,,0
-13789,21.69753075,21.69753075,2001008980,White,84118,INHALATION OF PRODUCTS OF COMBUSTION,,25,25,False,,0,True,26,2,False,,0
-23067,,,2001011414,White,84078,GUNSHOT WOUND CHEST - SELF-INFLICTED,Revolver,,,False,,0,False,,0,False,,0
-13133,23.36486435,23.36486435,2001011928,White,84664,SHOTGUN WOUND TO HEAD,Shotgun,20,20,False,,0,False,,0,False,,0
-42089,25.72433853,25.72433853,2002003374,White,84770,SELF-INFLICTED GUNSHOT WOUND TO HEAD,Pistol,27,27,False,,0,False,,0,False,,0
-56604,,,2002003735,White,84084,GUNSHOT WOUND OF THE HEAD,Revolver,,,False,,0,False,,0,False,,0
-41708,,,2002008470,White,84720,GUNSHOT WOUND OF THE HEAD,Rifle,,,False,,0,False,,0,False,,0
-5125,251492119,25.79053307,2002010901,White,84043,GUNSHOT WOUND OF THE HEAD,Rifle,22,22,False,,0,False,,0,False,,0
-24459,27.97653008,27.97653008,2003008888,White,84405,ASPHYXIA,Rope,21,21,False,,0,False,,0,False,,0
-25316,26.62878799,294958725,2003012080,White,84050,CARBON MONOXIDE INTOXICATION,,42,42,False,,0,True,38,2,False,,0
-61341,17.94813156,17.94813156,2004001311,White,84040,CARBON MONOXIDE POISONING,,33,33,False,,0,True,29,7,False,,0
-31866,258777046,258777046,2004003600,White,84106,STRANGULATION BY LIGATURE (HANGING),Climbing Rope,31,31,False,,0,True,28,2,False,,0
-43920,232595139,232595139,2004008157,White,84404,ASPHYXIA,Baling Twine,21,21,True,24,2,True,24,3,False,,0
-51179,26.44386482,26.44386482,2004008595,White,84015,CARBON MONOXIDE POISONING,,35,35,False,,0,False,,0,False,,0
-51881,17.75252533,17.75252533,2004008960,White,84660,SUFFOCATION,Plastic Bag,17,17,False,,0,False,,0,False,,0
-11605,25.839830399999997,25.839830399999997,2004009729,White,84653,GUNSHOT WOUND OF LEFT UPPER CHEST AND COMPLICATIONS,Rifle,26,26,False,,0,True,24,3,False,,0
-49225,19.47368431,21.90789413,2004011221,White,84062,ASPHYXIA,,26,29,False,,0,True,26,2,False,,0
-18833,29.261186600000002,29.261186600000002,2004011952,White,84115,GUNSHOT WOUNDS TO THE CHEST,Handgun,45,45,False,,0,False,,0,False,,0
-45518,,,2004013216,White,84634,STRANGULATION BY LIGATURE (HANGING),,,,False,,0,False,,0,False,,0
-36629,19.663387300000004,19.663387300000004,2005000653,White,84066,"SELF-INFLICTED GUNSHOT WOUND LEFT CHEST, SUICIDE",Rifle,19,19,False,,0,False,,0,False,,0
-4039,25.84016037,25.84016037,2005004603,White,84043,QUETIAPINE (SEROQUEL) INTOXICATION,,24,24,True,34,15,True,26,9,False,,0
-21697,238594513,238594513,2006002601,White,84314,GUNSHOT WOUND OF HEAD,Rifle,21,21,False,,0,False,,0,False,,0
-16790,22.37557793,22.37557793,2006004623,White,84119,ACUTE CARBON MONOXIDE POISONING,,37,37,False,,0,False,,0,False,,0
-56716,23.43333244,23.43333244,2006012897,White,84118,Acute Oxycodone Toxicity,,24,24,False,,0,True,25,7,False,,0
-14059,31.37770271,31.37770271,2007000430,White,84711,Gunshot wound to the head,Rifle,32,32,True,32,5,True,36,1,False,,0
-65765,28.97193146,33.67008209,2007005017,White,84093,Hanging,,22,24,True,17,19,True,18,1,False,,0
-25172,23.49075508,23.49075508,2007007030,White,84117,Gunshot Wound To Head,Semi Automatic,28,28,False,,0,True,28,7,False,,0
-1361,25.72433853,25.72433853,2007012848,White,84647,Gunshot wound of head,Rifle,21,21,False,,0,True,22,10,False,,0
-53757,24.950658800000003,24.950658800000003,2008000470,White,84078,Gunshot wound of the head,Rifle,15,15,False,,0,False,,0,False,,0
-1984,19.36639214,19.36639214,2008000615,White,84065,Acute Salicylate And Acetaminophen Toxicity,,49,49,False,,0,True,56,1,False,,0
-13549,31.32100677,31.32100677,2008001380,White,84039,Gunshot wound to the head,Pistol,58,58,False,,0,False,,0,False,,0
-62633,22.14870834,24.3635788,2008002937,White,84075,Drug intoxication - alprazolam,,24,29,False,,0,True,27,2,False,,0
-14509,21.75520706,231031494,2008009133,White,84120,Ligature hanging and complications,,21,25,False,,0,False,,0,False,,0
-26663,26.44386482,29.28585625,2008012885,White,84663,Asphyxia,,24,30,False,,0,False,,0,False,,0
-38948,20.35865402,21.14167976,2008012925,White,84084,,,21,24,False,,0,True,23,31,False,,0
-15524,19.94227409,20.22118568,2008013097,White,84084,,,18,18,False,,0,True,20,2,False,,0
-45020,38.74311066,38.74311066,2008014454,White,84041,Hanging,Ligature/Sheet,18,18,True,17,1,False,,0,False,,0
-2019,26.60575294,27.36591721,2009000581,White,84120,,,21,26,False,,0,True,26,4,False,,0
-27951,20.80306053,20.80306053,2009000734,White,84075,Shotgun wound of head,Shotgun,27,27,False,,0,False,,0,False,,0
-22460,21.61575127,21.61575127,2009017127,White,84096,Cardiac arrest,,16,16,True,14,1,True,14,9,False,,0
-44722,27.432361600000004,27.432361600000004,2009017520,White,84032,,,67,67,False,,0,True,64,2,False,,0
-2250,27.12191391,29.83410454,2009019731,White,84115,Shotgun wound to the head,Shotgun,63,63,False,,0,False,,0,False,,0
-32830,232595139,28.33963203,2009019970,White,84096,Shotgun wound of head,Shotgun,21,28,False,,0,True,20,10,False,,0
-8951,25.76581764,27.89129066,2009024703,White,84128,Gunshot wound of chest,Pistol,17,18,False,,0,False,,0,False,,0
-59007,,,2009024731,White,83854,Gunshot wound of head,Revolver,,,False,,0,False,,0,False,,0
-65343,25.50524139,31.24444389,2009025745,White,84620,Gunshot wound of head,Auto,40,45,False,,0,True,36,2,False,,0
-42257,19.52777863,19.52777863,2009026218,White,84032,Gunshot wound of head,Rifle,17,17,False,,0,False,,0,False,,0
-24894,20.34143448,20.34143448,2010000169,White,84302,Hanging,Ligature,16,16,False,,0,True,17,1,False,,0
-62361,19.89864922,20.5405407,2010002860,White,84404,Gunshot wound of the head,Pistiol,21,26,False,,0,False,,0,False,,0
-40329,20.91846848,24.40488052,2010003321,White,84084,Gunshot wound of the head,Pistol,16,25,False,,0,True,23,3,False,,0
-30314,23.70759773,23.70759773,2010008794,White,84403,Gunshot wound of the head,Handgun,22,22,False,,0,False,,0,True,11,1
-16029,274353523,274353523,2010011767,White,84401,Shotgun wound of the head,Shotgun,26,26,False,,0,False,,0,False,,0
-133,25.84016037,26.57844925,2010013626,White,84401,Acute carbon monoxide poisoning,,34,39,False,,0,True,40,1,False,,0
-42258,27.43572044,28.24265289,2011000811,White,84032,Gunshot wound of the head,,33,34,False,,0,False,,0,False,,0
-13977,21.42631149,235362701,2011004937,White,84520,Gun shot wound to the head,,25,33,False,,0,False,,0,False,,0
-47561,24.40972137,24.40972137,2011007802,White,84107,Gunshot wound of the head,,19,19,False,,0,False,,0,False,,0
-66561,31.19020081,32.54629517,2011010202,White,84087,Gunshot wound of the chest,,46,51,False,,0,False,,0,False,,0
-67192,27.40588188,30.40657425,2011011861,White,84120,Gunshot wound of the chest,,18,24,False,,0,False,,0,False,,0
-18491,22.95510292,27.25918388,2011014050,White,84647,"Alcohol and drug intoxication: alprazolam, cyclobenzaprine, hydrocodone, fluoxetine",,23,28,False,,0,False,,0,False,,0
-28494,27.12191391,30.51215363,2011014236,White,84601,Gunshot wound of the head,,20,42,False,,0,False,,0,False,,0
-5215,19.76427269,19.76427269,2012003774,White,84118,Gunshot wound of the head,,49,49,False,,0,True,49,20,False,,0
-15780,21.69753075,22.37557793,2012004878,White,84070,Hanging,,67,77,False,,0,False,,0,False,,0
-57720,26.60575294,26.60575294,2012006917,White,84003,Gunshot wound of the head,,53,53,False,,0,False,,0,False,,0
-10609,28.69387817,28.69387817,2012008230,White,84726,Gunshot wound of head,,47,47,False,,0,False,,0,False,,0
-49400,18.98534012,18.98534012,2012009138,White,84655,Hanging,,16,16,False,,0,False,,0,False,,0
-5299,27.27433395,294958725,2012011791,White,84627,Drug intoxication: Amitriptyline,,22,27,False,,0,True,15,4,False,,0
-64130,28.35034752,29.53161049,2012012180,White,84604,Self inflicted shotgun wound to the head,,16,18,False,,0,True,22,2,False,,0
-8064,27.25918388,27.25918388,2012015130,White,84664,Gunshot wound of chest,,16,16,False,,0,False,,0,False,,0
-59325,303540039,39.47509766,2013002222,White,84118,"Drug intoxication: hydrocodone/acetaminophen, tramadol, duloxetine",,45,57,False,,0,True,51,3,False,,0
-52885,27.432361600000004,34.74765778,2013004767,White,84770,"Drug toxicity: diphenhydramine, doxylamine, meprobamate, morphine (prescription)",,41,47,False,,0,True,45,2,False,,0
-381,24.40488052,24.40488052,2013005815,White,84750,Gunshot Wound To Head,,59,59,False,,0,False,,0,False,,0
-10787,29.83410454,37.97068024,2013008599,White,84542,Gun Shot to the Head,,34,37,False,,0,False,,0,False,,0
-14215,44.47550964,44.47550964,2013010225,White,,,,35,35,False,,0,True,35,4,False,,0
-10423,23.75,347894897,2013014810,White,84405,Gunshot wound of the head,,16,21,True,18,3,True,24,1,False,,0
-47434,27.16908264,28.79332161,2013015403,,84106,Anoxic brain injury,,22,25,False,,0,True,22,66,False,,0
-33347,26.12009811,26.38393784,2014006570,White,,,,31,31,True,34,2,True,35,1,False,,0
-42167,22.49600029,27.49511147,2014007893,White,,,,16,25,False,,0,False,,0,False,,0
-60644,18.46875572,23.125,2014009195,White,,,,17,23,False,,0,False,,0,False,,0
-36898,24.40972137,24.40972137,2014015526,White,,,,42,42,False,,0,True,47,1,False,,0
-13993,26.15303993,26.15303993,2015000906,White,,,,50,50,False,,0,True,49,7,False,,0
-15569,24.20798874,25.84558868,2015003722,White,,,,18,24,False,,0,False,,0,False,,0
-48533,20.22118568,20.91846848,2015006955,White,,,,16,21,True,17,12,True,16,8,False,,0
-53952,29.985101699999998,29.985101699999998,2015007338,White,,,,15,15,False,,0,False,,0,False,,0
-65152,21.63076973,22.31201172,2015008180,White,,,,30,31,False,,0,False,,0,False,,0
-9090,208571434,26.54183578,2015012645,White,,,,32,45,False,,0,True,46,6,False,,0
-13608,25.76581764,33.90239334,2015014180,White,,,,44,49,False,,0,False,,0,False,,0
+personid,FirstBMI,MaxBMI,STATENUM,race,zip,cause_death,weapon,AgeFirstBMI,AgeMaxBMI,alcohol,Age1D_alcohol,Nr.Diag_alcohol,psychosis,Age1D_psychosis,Nr.Diag_psychosis,anxiety-non-trauma,Age1D_anxiety-non-trauma,Nr.Diag_anxiety-non-trauma,somatic disorder,Age1D_somatic disorder,Nr.Diag_somatic disorder,eating,Age1D_eating,Nr.Diag_eating,bipolar spectrum illness,Age1D_bipolar spectrum illness,Nr.Diag_bipolar spectrum illness,depression,Age1D_depression,Nr.Diag_depression,interpersonal trauma,Age1D_interpersonal trauma,Nr.Diag_interpersonal trauma,PD-Cluster C-anxiety,Age1D_PD-Cluster C-anxiety,Nr.Diag_PD-Cluster C-anxiety,PD-Cluster B-emotional,Age1D_PD-Cluster B-emotional,Nr.Diag_PD-Cluster B-emotional,PD,Age1D_PD,Nr.Diag_PD,Impulse control disorder,Age1D_Impulse control disorder,Nr.Diag_Impulse control disorder,obesity,Age1D_obesity,Nr.Diag_obesity,cardiovascular,Age1D_cardiovascular,Nr.Diag_cardiovascular,COPD,Age1D_COPD,Nr.Diag_COPD,asthma,Age1D_asthma,Nr.Diag_asthma,immune-autoimmune,Age1D_immune-autoimmune,Nr.Diag_immune-autoimmune
+29868,,,1980000647,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+58848,,,1950000090,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+27814,,,1968005777,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+60509,,,1977006181,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+60825,,,1976002272,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+10762,,,1969006205,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+18996,,,1980000163,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+62943,,,1982005360,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+65739,,,1991003622,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+17245,,,1977005421,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+36257,,,1950000022,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+65130,,,1982003169,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+9353,,,1956000029,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+15383,,,1981006493,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+17969,,,1967000211,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+18801,,,1984005202,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+24353,,,1994004076,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+2819,,,1996002177,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+8264,,,1993004946,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+6457,,,1987000318,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+52600,,,1979003606,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+60065,,,1979003412,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+66253,,,1989009411,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+15779,,,1987007317,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+31560,,,1991008337,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+50968,,,1990006729,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+1519,,,1995003689,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+25233,,,1991009308,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+66329,,,1989004219,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+66330,,,1982004662,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+26090,,,1990002921,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+57192,,,1991008101,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+4134,,,1992002236,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+37541,,,1993008237,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+41793,,,1994007412,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+41824,,,1993009438,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+10894,,,1994006918,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+28400,,,1995001045,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+31968,,,1995002066,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+39167,,,1995004002,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+58599,,,1982007954,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+39809,,,1991003437,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+52220,,,1980002415,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+53706,,,1980005292,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+54490,,,1980006847,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+60699,,,1982002032,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+60900,,,1982002350,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+61032,,,1982002703,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+63452,,,1982007809,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+213,,,1983008246,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+17216,,,1987003252,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+23038,,,1988005254,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+4894,,,1965002339,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+47028,,,1975005327,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+54134,,,1977000475,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+56523,,,1977006076,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+9568,,,1977001324,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+53265,,,1956002205,,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+66690,,,1996000767,White,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+66941,,,1997001362,White,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+14621,,,1997001430,White,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+1967,,,1998001771,White,84088,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+11514,,,1998002675,White,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+34234,,,1998007232,White,84074,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+48862,,,1998007714,White,,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,53,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+3603,,,1998009585,White,84601,,,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,24,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+56687,24.27378082,24.27378082,2000003092,White,84043,GUNSHOT WOUND TO THE HEAD AND COMPLICATIONS,Rifle,47,47,True,48,2,True,49,1,False,,0,False,,0,False,,0,False,,0,True,49,4,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+50614,,,2000001605,White,84094,GUNSHOT WOUND OF LEFT CHEST/UPPER ABDOMEN,Rifle,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+16926,190410843,190410843,2000004603,White,84660,GUNSHOT WOUNDS (2) OF HEAD,Rifle,23,23,True,21,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,21,1,True,21,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+27120,38.73278427,38.73278427,2000007133,White,84107,ASPHYXIA,,28,28,True,33,12,True,34,6,False,,0,False,,0,False,,0,False,,0,True,33,8,False,,0,False,,0,True,32,9,True,32,9,False,,0,True,33,1,False,,0,False,,0,False,,0,False,,0
+61046,29.29166603,29.29166603,2000008019,White,84118,"MIXED DRUG POISONING - METOPROLOL, VERAPAMIL,",,39,39,True,40,9,False,,0,False,,0,False,,0,False,,0,False,,0,True,40,10,False,,0,False,,0,False,,0,True,42,2,False,,0,False,,0,True,43,2,True,42,2,False,,0,False,,0
+52789,19.12835503,21.76674843,2001000644,White,84401,GUNSHOT WOUND TO THE HEAD,Semi-Auto,30,30,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,30,1,False,,0,True,30,1,False,,0,True,30,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+19934,22.80493164,22.80493164,2001000969,White,84121,HANGING,Ligature,26,26,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,26,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+26695,,,2001004991,White,84116,GUNSHOT WOUND TO THE HEAD,Revolver,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+39746,,,2001005938,White,84084,GUNSHOT WOUND TO THE HEAD,Pistol,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+13789,21.69753075,21.69753075,2001008980,White,84118,INHALATION OF PRODUCTS OF COMBUSTION,,25,25,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,26,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+23067,,,2001011414,White,84078,GUNSHOT WOUND CHEST - SELF-INFLICTED,Revolver,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,46,15,False,,0,False,,0,False,,0
+13133,23.36486435,23.36486435,2001011928,White,84664,SHOTGUN WOUND TO HEAD,Shotgun,20,20,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+42089,25.72433853,25.72433853,2002003374,White,84770,SELF-INFLICTED GUNSHOT WOUND TO HEAD,Pistol,27,27,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+56604,,,2002003735,White,84084,GUNSHOT WOUND OF THE HEAD,Revolver,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+41708,,,2002008470,White,84720,GUNSHOT WOUND OF THE HEAD,Rifle,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+5125,251492119,25.79053307,2002010901,White,84043,GUNSHOT WOUND OF THE HEAD,Rifle,22,22,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+24459,27.97653008,27.97653008,2003008888,White,84405,ASPHYXIA,Rope,21,21,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+25316,26.62878799,294958725,2003012080,White,84050,CARBON MONOXIDE INTOXICATION,,42,42,True,36,1,False,,0,True,42,1,False,,0,False,,0,False,,0,True,38,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+61341,17.94813156,17.94813156,2004001311,White,84040,CARBON MONOXIDE POISONING,,33,33,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,29,7,False,,0,False,,0,True,31,1,True,31,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+31866,258777046,258777046,2004003600,White,84106,STRANGULATION BY LIGATURE (HANGING),Climbing Rope,31,31,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,28,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+43920,232595139,232595139,2004008157,White,84404,ASPHYXIA,Baling Twine,21,21,False,,0,False,,0,False,,0,False,,0,False,,0,True,24,2,True,24,3,False,,0,False,,0,False,,0,True,24,2,False,,0,False,,0,True,25,1,False,,0,False,,0,False,,0
+51179,26.44386482,26.44386482,2004008595,White,84015,CARBON MONOXIDE POISONING,,35,35,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+51881,17.75252533,17.75252533,2004008960,White,84660,SUFFOCATION,Plastic Bag,17,17,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+11605,25.839830399999997,25.839830399999997,2004009729,White,84653,GUNSHOT WOUND OF LEFT UPPER CHEST AND COMPLICATIONS,Rifle,26,26,False,,0,False,,0,True,26,1,False,,0,False,,0,False,,0,True,24,3,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,26,4,False,,0,False,,0,False,,0
+49225,19.47368431,21.90789413,2004011221,White,84062,ASPHYXIA,,26,29,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,26,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+18833,29.261186600000002,29.261186600000002,2004011952,White,84115,GUNSHOT WOUNDS TO THE CHEST,Handgun,45,45,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+45518,,,2004013216,White,84634,STRANGULATION BY LIGATURE (HANGING),,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+36629,19.663387300000004,19.663387300000004,2005000653,White,84066,"SELF-INFLICTED GUNSHOT WOUND LEFT CHEST, SUICIDE",Rifle,19,19,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+4039,25.84016037,25.84016037,2005004603,White,84043,QUETIAPINE (SEROQUEL) INTOXICATION,,24,24,False,,0,False,,0,False,,0,False,,0,False,,0,True,34,15,True,26,9,False,,0,False,,0,False,,0,True,34,2,False,,0,False,,0,True,26,4,False,,0,False,,0,False,,0
+21697,238594513,238594513,2006002601,White,84314,GUNSHOT WOUND OF HEAD,Rifle,21,21,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+16790,22.37557793,22.37557793,2006004623,White,84119,ACUTE CARBON MONOXIDE POISONING,,37,37,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+56716,23.43333244,23.43333244,2006012897,White,84118,Acute Oxycodone Toxicity,,24,24,False,,0,False,,0,True,29,2,False,,0,False,,0,False,,0,True,25,7,True,27,3,False,,0,False,,0,False,,0,False,,0,False,,0,True,29,4,False,,0,False,,0,False,,0
+14059,31.37770271,31.37770271,2007000430,White,84711,Gunshot wound to the head,Rifle,32,32,False,,0,False,,0,False,,0,False,,0,False,,0,True,32,5,True,36,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+65765,28.97193146,33.67008209,2007005017,White,84093,Hanging,,22,24,False,,0,False,,0,False,,0,False,,0,False,,0,True,17,19,True,18,1,False,,0,False,,0,False,,0,False,,0,True,26,1,True,25,2,False,,0,False,,0,False,,0,False,,0
+25172,23.49075508,23.49075508,2007007030,White,84117,Gunshot Wound To Head,Semi Automatic,28,28,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,28,7,True,28,3,False,,0,True,32,2,True,32,2,False,,0,True,29,2,False,,0,False,,0,False,,0,False,,0
+1361,25.72433853,25.72433853,2007012848,White,84647,Gunshot wound of head,Rifle,21,21,True,23,5,False,,0,False,,0,False,,0,False,,0,False,,0,True,22,10,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,23,17,False,,0,False,,0,False,,0
+53757,24.950658800000003,24.950658800000003,2008000470,White,84078,Gunshot wound of the head,Rifle,15,15,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+1984,19.36639214,19.36639214,2008000615,White,84065,Acute Salicylate And Acetaminophen Toxicity,,49,49,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,56,1,False,,0,False,,0,False,,0,True,55,1,False,,0,False,,0,True,55,2,True,55,1,False,,0,False,,0
+13549,31.32100677,31.32100677,2008001380,White,84039,Gunshot wound to the head,Pistol,58,58,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+62633,22.14870834,24.3635788,2008002937,White,84075,Drug intoxication - alprazolam,,24,29,False,,0,False,,0,True,29,4,False,,0,False,,0,False,,0,True,27,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+14509,21.75520706,231031494,2008009133,White,84120,Ligature hanging and complications,,21,25,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,29,5,False,,0,False,,0,False,,0
+26663,26.44386482,29.28585625,2008012885,White,84663,Asphyxia,,24,30,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+38948,20.35865402,21.14167976,2008012925,White,84084,,,21,24,True,24,4,False,,0,True,24,8,False,,0,False,,0,False,,0,True,23,31,False,,0,False,,0,False,,0,True,23,4,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+15524,19.94227409,20.22118568,2008013097,White,84084,,,18,18,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,20,2,True,19,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+45020,38.74311066,38.74311066,2008014454,White,84041,Hanging,Ligature/Sheet,18,18,False,,0,False,,0,False,,0,False,,0,False,,0,True,17,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+2019,26.60575294,27.36591721,2009000581,White,84120,,,21,26,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,26,4,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+27951,20.80306053,20.80306053,2009000734,White,84075,Shotgun wound of head,Shotgun,27,27,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+22460,21.61575127,21.61575127,2009017127,White,84096,Cardiac arrest,,16,16,False,,0,False,,0,False,,0,False,,0,False,,0,True,14,1,True,14,9,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+44722,27.432361600000004,27.432361600000004,2009017520,White,84032,,,67,67,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,64,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+2250,27.12191391,29.83410454,2009019731,White,84115,Shotgun wound to the head,Shotgun,63,63,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+32830,232595139,28.33963203,2009019970,White,84096,Shotgun wound of head,Shotgun,21,28,True,28,4,False,,0,False,,0,False,,0,False,,0,False,,0,True,20,10,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+8951,25.76581764,27.89129066,2009024703,White,84128,Gunshot wound of chest,Pistol,17,18,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+59007,,,2009024731,White,83854,Gunshot wound of head,Revolver,,,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+65343,25.50524139,31.24444389,2009025745,White,84620,Gunshot wound of head,Auto,40,45,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,36,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+42257,19.52777863,19.52777863,2009026218,White,84032,Gunshot wound of head,Rifle,17,17,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+24894,20.34143448,20.34143448,2010000169,White,84302,Hanging,Ligature,16,16,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,17,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,17,2,False,,0,False,,0,False,,0
+62361,19.89864922,20.5405407,2010002860,White,84404,Gunshot wound of the head,Pistiol,21,26,False,,0,False,,0,True,23,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+40329,20.91846848,24.40488052,2010003321,White,84084,Gunshot wound of the head,Pistol,16,25,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,23,3,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+30314,23.70759773,23.70759773,2010008794,White,84403,Gunshot wound of the head,Handgun,22,22,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,11,1,False,,0
+16029,274353523,274353523,2010011767,White,84401,Shotgun wound of the head,Shotgun,26,26,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+133,25.84016037,26.57844925,2010013626,White,84401,Acute carbon monoxide poisoning,,34,39,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,40,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+42258,27.43572044,28.24265289,2011000811,White,84032,Gunshot wound of the head,,33,34,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,40,1,False,,0,False,,0,False,,0
+13977,21.42631149,235362701,2011004937,White,84520,Gun shot wound to the head,,25,33,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+47561,24.40972137,24.40972137,2011007802,White,84107,Gunshot wound of the head,,19,19,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+66561,31.19020081,32.54629517,2011010202,White,84087,Gunshot wound of the chest,,46,51,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,51,1,False,,0,False,,0,False,,0,True,51,1,False,,0,False,,0
+67192,27.40588188,30.40657425,2011011861,White,84120,Gunshot wound of the chest,,18,24,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+18491,22.95510292,27.25918388,2011014050,White,84647,"Alcohol and drug intoxication: alprazolam, cyclobenzaprine, hydrocodone, fluoxetine",,23,28,False,,0,False,,0,True,30,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+28494,27.12191391,30.51215363,2011014236,White,84601,Gunshot wound of the head,,20,42,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+5215,19.76427269,19.76427269,2012003774,White,84118,Gunshot wound of the head,,49,49,False,,0,False,,0,True,53,9,True,55,5,False,,0,False,,0,True,49,20,False,,0,False,,0,False,,0,True,53,1,False,,0,False,,0,False,,0,True,53,1,False,,0,True,46,1
+15780,21.69753075,22.37557793,2012004878,White,84070,Hanging,,67,77,True,75,2,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,75,1,False,,0,False,,0,False,,0
+57720,26.60575294,26.60575294,2012006917,White,84003,Gunshot wound of the head,,53,53,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+10609,28.69387817,28.69387817,2012008230,White,84726,Gunshot wound of head,,47,47,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+49400,18.98534012,18.98534012,2012009138,White,84655,Hanging,,16,16,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+5299,27.27433395,294958725,2012011791,White,84627,Drug intoxication: Amitriptyline,,22,27,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,15,4,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,30,1,False,,0,False,,0,False,,0
+64130,28.35034752,29.53161049,2012012180,White,84604,Self inflicted shotgun wound to the head,,16,18,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,22,2,False,,0,False,,0,False,,0,False,,0,False,,0,True,22,2,True,22,2,False,,0,False,,0,False,,0
+8064,27.25918388,27.25918388,2012015130,White,84664,Gunshot wound of chest,,16,16,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+59325,303540039,39.47509766,2013002222,White,84118,"Drug intoxication: hydrocodone/acetaminophen, tramadol, duloxetine",,45,57,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,51,3,False,,0,False,,0,False,,0,False,,0,False,,0,True,50,1,True,51,2,False,,0,False,,0,False,,0
+52885,27.432361600000004,34.74765778,2013004767,White,84770,"Drug toxicity: diphenhydramine, doxylamine, meprobamate, morphine (prescription)",,41,47,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,45,2,False,,0,False,,0,False,,0,True,40,1,False,,0,False,,0,False,,0,True,40,1,False,,0,False,,0
+381,24.40488052,24.40488052,2013005815,White,84750,Gunshot Wound To Head,,59,59,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,53,3,False,,0,False,,0,False,,0,True,53,3,False,,0,False,,0
+10787,29.83410454,37.97068024,2013008599,White,84542,Gun Shot to the Head,,34,37,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,45,1,False,,0,False,,0,False,,0,True,45,1,False,,0,False,,0
+14215,44.47550964,44.47550964,2013010225,White,,,,35,35,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,35,4,False,,0,False,,0,False,,0,False,,0,False,,0,True,42,2,True,42,2,False,,0,False,,0,False,,0
+10423,23.75,347894897,2013014810,White,84405,Gunshot wound of the head,,16,21,False,,0,False,,0,True,18,7,False,,0,False,,0,True,18,3,True,24,1,True,18,2,False,,0,False,,0,False,,0,False,,0,True,24,1,False,,0,False,,0,False,,0,False,,0
+47434,27.16908264,28.79332161,2013015403,,84106,Anoxic brain injury,,22,25,False,,0,False,,0,False,,0,False,,0,True,32,2,False,,0,True,22,66,True,30,3,False,,0,True,30,25,True,30,27,False,,0,True,30,4,True,32,10,False,,0,False,,0,False,,0
+33347,26.12009811,26.38393784,2014006570,White,,,,31,31,True,30,6,False,,0,False,,0,False,,0,False,,0,True,34,2,True,35,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+42167,22.49600029,27.49511147,2014007893,White,,,,16,25,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+60644,18.46875572,23.125,2014009195,White,,,,17,23,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,17,1,False,,0,False,,0,False,,0
+36898,24.40972137,24.40972137,2014015526,White,,,,42,42,False,,0,False,,0,False,,0,True,39,2,False,,0,False,,0,True,47,1,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+13993,26.15303993,26.15303993,2015000906,White,,,,50,50,True,49,2,False,,0,False,,0,False,,0,False,,0,False,,0,True,49,7,False,,0,False,,0,False,,0,True,47,4,False,,0,False,,0,True,56,2,True,47,4,False,,0,False,,0
+15569,24.20798874,25.84558868,2015003722,White,,,,18,24,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+48533,20.22118568,20.91846848,2015006955,White,,,,16,21,False,,0,True,19,12,True,21,2,True,16,2,False,,0,True,17,12,True,16,8,False,,0,False,,0,True,19,3,True,19,5,False,,0,False,,0,True,28,3,False,,0,False,,0,False,,0
+53952,29.985101699999998,29.985101699999998,2015007338,White,,,,15,15,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+65152,21.63076973,22.31201172,2015008180,White,,,,30,31,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+9090,208571434,26.54183578,2015012645,White,,,,32,45,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,True,46,6,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
+13608,25.76581764,33.90239334,2015014180,White,,,,44,49,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0,False,,0
