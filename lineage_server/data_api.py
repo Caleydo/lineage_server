@@ -13,8 +13,7 @@ app = Namespace(__name__)
 _log = logging.getLogger(__name__)
 
 
-# gdb = GraphDatabase("http://0.0.0.0:7474")
-
+gdb = GraphDatabase("http://neo4j_db:7474")
 
 @app.route('/', methods=['GET'])
 def _func():
@@ -24,14 +23,14 @@ def _func():
 
 @app.route("/graph")
 def get_graph():
-    # query = ("MATCH (tom:Person {name: \"Tom Hanks\"})-[:ACTED_IN]->(tomHanksMovies) RETURN tom,tomHanksMovies")
-    # query = ("MATCH (m:Movie)<-[:ACTED_IN]-(a:Person) "
-    #          "RETURN m.title as movie, collect(a.name) as cast "
-    #          "LIMIT {limit}")
+    query = ("MATCH (tom:Person {name: \"Tom Hanks\"})-[:ACTED_IN]->(tomHanksMovies) RETURN tom,tomHanksMovies")
+    query = ("MATCH (m:Movie)<-[:ACTED_IN]-(a:Person) "
+             "RETURN m.title as movie, collect(a.name) as cast "
+             "LIMIT {limit}")
 
-    query = ("MATCH (t:Team) "
-    " RETURN t.name as movie , collect(t.country) as cast "
-     "LIMIT {limit}")
+    # query = ("MATCH (t:Team) "
+    # " RETURN t.name as movie , collect(t.country) as cast "
+    #  "LIMIT {limit}")
     results = gdb.query(query,
                         params={"limit": request.args.get("limit", 20)})
     nodes = []
