@@ -46,7 +46,7 @@ def get_labels(dbname):
                 " MATCH (n) WHERE label in labels(n) " 
                 " WITH label, n, size((n)--()) as degree "
                 " ORDER BY degree DESC " 
-                " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree}) AS nodes ")
+                " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree, id:COALESCE (n.uuid, n.id)}) AS nodes ")
 
     labelResults = db.query(labelQuery)
 
@@ -58,14 +58,15 @@ def get_labels(dbname):
 
 
 
-
-@app.route("/graph/<dbname>")
-def get_graph(dbname):
+@app.route("/graph/<dbname>") 
+@app.route("/graph/<dbname>/<rootID>/<depth>")
+def get_graph(dbname,rootID = None, depth = 1):
 
     if dbname == 'got':
         db = gdbGot
 
-        rootID = 'fb7b71da-84cb-4af5-a9fc-fc14e597f8f0' #Cercei Lannister
+        if rootID is None:
+            rootID = 'fb7b71da-84cb-4af5-a9fc-fc14e597f8f0' #Cercei Lannister
 
 
         # query = ("MATCH (user:Character) WHERE user.uuid = 'fb7b71da-84cb-4af5-a9fc-fc14e597f8f0' "
@@ -125,17 +126,19 @@ def get_graph(dbname):
     elif dbname == 'path':
         db = gdbPath
 
-        rootID = 'C00166'
+        if rootID is None:
+            rootID = 'C00166' #Sample Root
 
-        query = ("MATCH (user:_Network_Node) WHERE user.id = 'C00166' "
-             "CALL apoc.path.subgraphAll(user, {maxLevel:3, labelFilter:'+_Network_Node', relationshipFilter:'Edge'}) YIELD nodes, relationships "
+# labelFilter:'+_Network_Node', relationshipFilter:'Edge'
+        query = ("MATCH (user) WHERE user.id = {rootID} OR user.uuid = {rootID} "
+             "CALL apoc.path.subgraphAll(user, {maxLevel:{depth}}) YIELD nodes, relationships "
             " UNWIND relationships as rels " 
             " UNWIND nodes as node " 
             " WITH node, startNode(rels) as sNode, endNode(rels) as eNode "  
             " RETURN {title:node.name, label:labels(node), id:node.id} as node2, {title:sNode.name, label:labels(sNode), id:sNode.id} as sNode, {title:eNode.name, label:labels(eNode), id:eNode.id} as eNode")
 
         results = db.query(query,
-                       params={"limit": request.args.get("limit", 100)})
+                       params={"rootID":request.args.get("rootID",rootID),"depth":request.args.get("depth",depth)})
         nodes = []
         rels = []
 
