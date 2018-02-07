@@ -1,1 +1,38 @@
 version: '2.0'
+services:
+  neo4j_path:
+    image: neo4j
+    ports:
+      - "7475:7474"
+      - "7688:7687"
+    volumes:
+      - '$PWD/neo4j/logs_path:/logs'
+      - '$PWD/neo4j/data_path:/data'
+      - '$PWD/neo4j/plugins_path:/plugins'
+      - '$PWD/neo4j/conf_path:/conf'
+    environment:
+      NEO4J_AUTH: "none"
+  neo4j_got:
+    image: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - '$PWD/neo4j/logs:/logs'
+      - '$PWD/neo4j/data:/data'
+      - '$PWD/neo4j/plugins:/plugins'
+      - '$PWD/neo4j/conf:/conf'
+    environment:
+      NEO4J_AUTH: "none"
+  # neo4j_coauth:
+  #   image: neo4j
+  #   ports:
+  #     - "7476:7474"
+  #     - "7689:7687"
+  #   # volumes:
+  #     # - '$PWD/neo4j/logs:/logs'
+  #     # - '$PWD/neo4j/data:/data'
+  #     # - '$PWD/neo4j/plugins:/plugins'
+  #     # - '$PWD/neo4j/conf:/conf'
+  #   environment:
+  #     NEO4J_AUTH: "none"
