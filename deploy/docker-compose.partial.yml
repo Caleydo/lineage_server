@@ -11,9 +11,10 @@ services:
       - '$PWD/lineage_server/neo4j/plugins_path:/plugins'
       - '$PWD/lineage_server/neo4j/conf_path:/conf'
     ulimits:
+      nproc: 65535
       nofile:
-        soft:40000
-        hard:40000
+        soft: 40000
+        hard: 40000
     environment:
       NEO4J_AUTH: "none"
   neo4j_got:
@@ -27,9 +28,10 @@ services:
       - '$PWD/lineage_server/neo4j/plugins:/plugins'
       - '$PWD/lineage_server/neo4j/conf:/conf'
     ulimits:
+      nproc: 65535
       nofile:
-        soft:40000
-        hard:40000
+        soft: 40000
+        hard: 40000
     environment:
       NEO4J_AUTH: "none"
   # neo4j_coauth:
