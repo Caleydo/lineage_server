@@ -15,12 +15,7 @@ services:
       nofile:
         soft: 40000
         hard: 40000
-    deploy:
-      resources:
-        limits:
-          memory: 50M
-        reservations:
-          memory: 20M
+    mem_limit: 1000000000
     environment:
       NEO4J_AUTH: "none"
   neo4j_got:
@@ -38,12 +33,7 @@ services:
       nofile:
         soft: 40000
         hard: 40000
-    deploy:
-      resources:
-        limits:
-          memory: 50M
-        reservations:
-          memory: 20M
+    mem_limit: 1000000000
     environment:
       NEO4J_AUTH: "none"
   # neo4j_coauth:
