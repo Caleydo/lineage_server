@@ -68,6 +68,30 @@ def get_graph(dbname = 'got',rootID = None, depth = 1):
         if rootID is None:
             rootID = 'fb7b71da-84cb-4af5-a9fc-fc14e597f8f0' #Cercei Lannister
 
+        # query = ("MATCH (c:Character)-[:APPEARED_IN]->(e:Episode) "
+        #          "RETURN {title:c.name, uuid:c.uuid} as character, collect({title:e.title, uuid:e.uuid}) as episodes "
+        #          "LIMIT {limit}")
+
+        # results = db.query(query,
+        #                params={"limit": request.args.get("limit", 30)})
+        # nodes = []
+        # rels = []
+        # i = 0
+
+        # for character, episodes in results:
+        #     nodes.append({"title": character['title'], "label": 'Actor', "uuid":character['uuid']})
+        
+        #     target = i
+        #     i += 1
+        #     for episode in episodes:
+        #         actor = {"title": episode['title'], "label": 'Movie', "uuid":episode['uuid']}
+        #         try:
+        #             source = nodes.index(actor)
+        #         except ValueError:
+        #             nodes.append(actor)
+        #             source = i
+        #             i += 1
+        #         rels.append({"source": source, "target": target})
 
     elif dbname == 'path':
         db = gdbPath
@@ -76,34 +100,73 @@ def get_graph(dbname = 'got',rootID = None, depth = 1):
             rootID = 'C00166' #Sample Root
 
 # labelFilter:'+_Network_Node', relationshipFilter:'Edge'
+        # query = ("MATCH (user) WHERE user.id = {rootID} OR user.uuid = {rootID} "
+        #      "CALL apoc.path.subgraphAll(user, {maxLevel:{depth}}) YIELD nodes, relationships "
+        #     " UNWIND relationships as rels " 
+        #     " UNWIND nodes as node " 
+        #     " WITH node, startNode(rels) as sNode, endNode(rels) as eNode "  
+        #     " RETURN {title: COALESCE (node.name, node.title), label:labels(node), id:COALESCE (node.uuid, node.id)} as node2, {title: COALESCE (sNode.name, sNode.title), label:labels(sNode), id:COALESCE (sNode.uuid, sNode.id)} as sNode, {title: COALESCE (eNode.name, eNode.title), label:labels(eNode), id:COALESCE (eNode.uuid, eNode.id)} as eNode")
+
+        # results = db.query(query,
+        #                params={"rootID":request.args.get("rootID",rootID),"depth":request.args.get("depth",depth)})
+        # nodes = []
+        # rels = []
+
+        # for node2, sNode, eNode in results:
+        #     filteredLabels = [item for item in node2['label'] if '_' not in item]
+        #     newNode = {"title": node2['title'], "label":filteredLabels[0], "uuid":node2['id']} 
+        #     try:
+        #         nodes.index(newNode)
+        #     except ValueError:
+        #         nodes.append(newNode)
+
+        # for node2,sNode,eNode in results:
+        #     filteredSLabels = [item for item in sNode['label'] if '_' not in item]
+        #     filteredELabels = [item for item in eNode['label'] if '_' not in item]
+        #     source = nodes.index({"title": sNode['title'], "label": filteredSLabels[0], "uuid":sNode['id']})
+        #     target = nodes.index({"title": eNode['title'], "label": filteredELabels[0], "uuid":eNode['id']})
+
+        #     edge = {"source": source, "target": target}
+        #     try:
+        #         rels.index(edge)
+        #     except ValueError:
+        #         rels.append(edge)
 
     # elif dbname == 'coauth':
     #     db = gdbCoauth
-    query = ("MATCH (user) WHERE user.id = {rootID} OR user.uuid = {rootID} "
-             "CALL apoc.path.subgraphAll(user, {maxLevel:{depth}}) YIELD nodes, relationships "
-            " UNWIND relationships as rels " 
-            " UNWIND nodes as node " 
-            " WITH node, startNode(rels) as sNode, endNode(rels) as eNode "  
-            " RETURN {title: COALESCE (node.name, node.title), label:labels(node), id:COALESCE (node.uuid, node.id)} as node2, {title: COALESCE (sNode.name, sNode.title), label:labels(sNode), id:COALESCE (sNode.uuid, sNode.id)} as sNode, {title: COALESCE (eNode.name, eNode.title), label:labels(eNode), id:COALESCE (eNode.uuid, eNode.id)} as eNode")
+
+    query = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
+            " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id)} as edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
+
+
+    # query = ("MATCH (user) WHERE user.id = {rootID} OR user.uuid = {rootID} "
+    #          "CALL apoc.path.subgraphAll(user, {maxLevel:{depth}}) YIELD nodes, relationships "
+    #         " UNWIND relationships as rels " 
+    #         " UNWIND nodes as node " 
+    #         " WITH node, startNode(rels) as sNode, endNode(rels) as eNode "  
+    #         " RETURN {title: COALESCE (node.name, node.title), label:labels(node), id:COALESCE (node.uuid, node.id)} as node2, {title: COALESCE (sNode.name, sNode.title), label:labels(sNode), id:COALESCE (sNode.uuid, sNode.id)} as sNode, {title: COALESCE (eNode.name, eNode.title), label:labels(eNode), id:COALESCE (eNode.uuid, eNode.id)} as eNode")
 
     results = db.query(query,
                        params={"rootID":request.args.get("rootID",rootID),"depth":request.args.get("depth",depth)})
-    nodes = []
+    
+    filteredRootLabels = [item for item in results[0][0]['label'] if '_' not in item]
+    
+    nodes = [{"title": results[0][0]['title'], "label":filteredRootLabels[0], "uuid":results[0][0]['id']}] #add root object to array of nodes
+    # nodes=[]
     rels = []
+    
 
-    for node2, sNode, eNode in results:
-        filteredLabels = [item for item in node2['label'] if '_' not in item]
-        newNode = {"title": node2['title'], "label":filteredLabels[0], "uuid":node2['id']} 
+    for root, edge, target in results:
+        # print(results[0])
+        filteredLabels = [item for item in target['label'] if '_' not in item]
+        newNode = {"title": target['title'], "label":filteredLabels[0], "uuid":target['id']} 
         try:
             nodes.index(newNode)
         except ValueError:
             nodes.append(newNode)
 
-    for node2,sNode,eNode in results:
-        filteredSLabels = [item for item in sNode['label'] if '_' not in item] #filter out _Set_Nodes and _Network_Nodes
-        filteredELabels = [item for item in eNode['label'] if '_' not in item] #filter out _Set_Nodes and _Network_Nodes
-        source = {"title": sNode['title'], "label": filteredSLabels[0], "uuid":sNode['id']}
-        target = {"title": eNode['title'], "label": filteredELabels[0], "uuid":eNode['id']}
+        source = {"title": root['title'], "label": filteredRootLabels[0], "uuid":root['id']}
+        target = {"title": target['title'], "label": filteredLabels[0], "uuid":target['id']}
 
 
         edge = {"source": source, "target": target}
@@ -111,6 +174,30 @@ def get_graph(dbname = 'got',rootID = None, depth = 1):
             rels.index(edge)
         except ValueError:
             rels.append(edge)
+        
+    
+    # for node2, sNode, eNode in results:
+    #     filteredLabels = [item for item in node2['label'] if '_' not in item]
+    #     newNode = {"title": node2['title'], "label":filteredLabels[0], "uuid":node2['id']} 
+    #     try:
+    #         nodes.index(newNode)
+    #     except ValueError:
+    #         nodes.append(newNode)
+
+    # for node2,sNode,eNode in results:
+    #     filteredSLabels = [item for item in sNode['label'] if '_' not in item]
+    #     filteredELabels = [item for item in eNode['label'] if '_' not in item]
+    #     # source = nodes.index({"title": sNode['title'], "label": filteredSLabels[0], "uuid":sNode['id']})
+    #     # target = nodes.index({"title": eNode['title'], "label": filteredELabels[0], "uuid":eNode['id']})
+    #     source = {"title": sNode['title'], "label": filteredSLabels[0], "uuid":sNode['id']}
+    #     target = {"title": eNode['title'], "label": filteredELabels[0], "uuid":eNode['id']}
+
+
+    #     edge = {"source": source, "target": target}
+    #     try:
+    #         rels.index(edge)
+    #     except ValueError:
+    #         rels.append(edge)
 
     return Response(dumps({"query":query, "nodes": nodes, "links": rels, "root":[rootID]}),
         mimetype="application/json")
