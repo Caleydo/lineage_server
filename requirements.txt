@@ -1,7 +1,7 @@
 -e git+https://github.com/phovea/phovea_server.git@develop#egg=phovea_server
-Sphinx==1.5.2
 flake8==3.0.4
 pep8-naming==0.4.1
-pytest-runner==2.9
 pytest==3.0.3
-recommonmark==0.4.0
+pytest-runner==2.9
+Sphinx==1.5.2
+neo4jrestclient==2.0.4
