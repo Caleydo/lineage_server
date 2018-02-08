@@ -1,4 +1,4 @@
-version: '2.2'
+version: "2.2"
 services:
   neo4j_path:
     image: neo4j
