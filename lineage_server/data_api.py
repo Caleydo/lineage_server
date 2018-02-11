@@ -125,8 +125,8 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
-                " UNWIND nodes as m "
-                " MATCH (n)-[edge]- (m) "
+                # " UNWIND nodes as m "
+                " MATCH (n)-[edge]-> (m) "
                 " WITH n, edge, m"
                 " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as n, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as m ") 
                 # " WITH * WHERE id(n) < id(m) "
@@ -171,11 +171,11 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
             target = targetNode
 
 
-            edge = {"source": source, "target": target}
+            rel = {"source": source, "target": target, "edge":edge}
             try:
-                rels.index(edge)
+                rels.index(rel)
             except ValueError:
-                rels.append(edge)
+                rels.append(rel)
 
 
     # Add in edges in between set nodes
@@ -187,11 +187,11 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
         source = {"title": n['title'], "label":filteredSLabels[0], "uuid":n['id']} 
         target = {"title": m['title'], "label":filteredTLabels[0], "uuid":m['id']} 
 
-        edge = {"source": source, "target": target}
+        rel = {"source": source, "target": target, "edge":edge} #{'attr':edge['data'],'type':edge['type']}}
         try:
-            rels.index(edge)
+            rels.index(rel)
         except ValueError:
-            rels.append(edge)
+            rels.append(rel)
 
     
     return Response(dumps({"setQuery":setQuery, "edgeQuery":edgeQuery, "nodes": nodes, "links": rels, "root":[rootID]}),
