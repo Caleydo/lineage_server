@@ -118,79 +118,57 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
     # elif dbname == 'coauth':
     #     db = gdbCoauth
 
-    query =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID}"
+    setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
+                " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id)} as edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
+
+
+    edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
                 " UNWIND nodes as m "
-                " MATCH (n) -[edge]- (m) "
+                " MATCH (n)-[edge]- (m) "
                 " WITH n, edge, m"
                 " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as n, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as m ") 
                 # " WITH * WHERE id(n) < id(m) "
                 # " MATCH path = allShortestPaths( (n)-[*..1]-(m) ) "
                 # " RETURN path") 
+    
+    setResults = db.query(setQuery,
+                       params={"rootID":request.args.get("rootID",rootID)})
+
+    edgeResults = db.query(edgeQuery,
+                       params={"rootID":request.args.get("rootID",rootID)})
 
     nodes=[]
     rels=[]
-    
-    results = db.query(query,
-                       params={"rootID":request.args.get("rootID",rootID)})
 
     
-    # filteredRootLabels = [item for item in results[0][0]['label'] if '_' not in item]
-    
+    # filteredRootLabels = [item for item in results[0][0]['label'] if '_' not in item] 
     # nodes = [{"title": results[0][0]['title'], "label":filteredRootLabels[0], "uuid":results[0][0]['id']}] #add root object to array of nodes
 
-    for n, edge, m in results:
+    # Add all target nodes to array node
+    for root, edge, target in setResults:
 
-        filteredSLabels = [item for item in n['label'] if '_' not in item]
-        filteredELabels = [item for item in m['label'] if '_' not in item]
+        filteredRootLabels = [item for item in root['label'] if '_' not in item]
+        filteredTargetLabels = [item for item in target['label'] if '_' not in item]
 
-        newSourceNode = {"title": n['title'], "label":filteredSLabels[0], "uuid":n['id']} 
-        newTargetNode = {"title": m['title'], "label":filteredELabels[0], "uuid":m['id']} 
-        try:
-            nodes.index(newSourceNode)
-        except ValueError:
-            nodes.append(newSourceNode)
-
-        try:
-            nodes.index(newTargetNode)
-        except ValueError:
-            nodes.append(newTargetNode)
-
-        source = {"title": n['title'], "label": filteredSLabels[0], "uuid":n['id']}
-        target = {"title": m['title'], "label": filteredELabels[0], "uuid":m['id']}
-
-
-        edge = {"source": source, "target": target}
-        try:
-            rels.index(edge)
-        except ValueError:
-            rels.append(edge)
-
-    if include == 'true':
-        query = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
-                " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id)} as edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
-
-        results = db.query(query,
-                        params={"rootID":request.args.get("rootID",rootID)})
+        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id']} 
+        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id']} 
         
-        filteredRootLabels = [item for item in results[0][0]['label'] if '_' not in item]
-        
-        nodes.append({"title": results[0][0]['title'], "label":filteredRootLabels[0], "uuid":results[0][0]['id']}) #add root object to array of nodes
-        # rels = []
-        
+        try:
+            nodes.index(targetNode)
+        except ValueError:
+            nodes.append(targetNode)
 
-        for root, edge, target in results:
-            # print(results[0])
-            filteredLabels = [item for item in target['label'] if '_' not in item]
-            newNode = {"title": target['title'], "label":filteredLabels[0], "uuid":target['id']} 
+        #Only add root and edge to targets if 'include Root' is true
+        if include == 'true':
             try:
-                nodes.index(newNode)
+                nodes.index(rootNode)
             except ValueError:
-                nodes.append(newNode)
+                nodes.append(rootNode)
 
-            source = {"title": root['title'], "label": filteredRootLabels[0], "uuid":root['id']}
-            target = {"title": target['title'], "label": filteredLabels[0], "uuid":target['id']}
+            source = rootNode
+            target = targetNode
 
 
             edge = {"source": source, "target": target}
@@ -200,7 +178,23 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
                 rels.append(edge)
 
 
-    return Response(dumps({"query":query, "nodes": nodes, "links": rels, "root":[rootID]}),
+    # Add in edges in between set nodes
+    for n, edge, m in edgeResults:
+
+        filteredSLabels = [item for item in n['label'] if '_' not in item]
+        filteredTLabels = [item for item in m['label'] if '_' not in item]
+
+        source = {"title": n['title'], "label":filteredSLabels[0], "uuid":n['id']} 
+        target = {"title": m['title'], "label":filteredTLabels[0], "uuid":m['id']} 
+
+        edge = {"source": source, "target": target}
+        try:
+            rels.index(edge)
+        except ValueError:
+            rels.append(edge)
+
+    
+    return Response(dumps({"setQuery":setQuery, "edgeQuery":edgeQuery, "nodes": nodes, "links": rels, "root":[rootID]}),
         mimetype="application/json")
 
 
