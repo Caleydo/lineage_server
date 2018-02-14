@@ -44,5 +44,10 @@ services:
       - '$PWD/lineage_server/neo4j/data_dblp:/data'
       - '$PWD/lineage_server/neo4j/plugins_dblp:/plugins'
       - '$PWD/lineage_server/neo4j/conf_dblp:/conf'
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 40000
+        hard: 40000
     environment:
       NEO4J_AUTH: "none"
