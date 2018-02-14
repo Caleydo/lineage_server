@@ -1,6 +1,11 @@
 from phovea_server.ns import Namespace
 from phovea_server.util import jsonify
 
+#to parse urls with / in them
+# from urllib.parse import urlparse 
+
+from requests.utils import quote, unquote
+
 import logging
 
 from json import dumps
@@ -70,21 +75,17 @@ def get_edges(dbname,nodeID):
 @app.route("/labels/<dbname>")
 def get_labels(dbname):
 
-    db = gdbGot
 
-    # if dbname == 'got':
-    #     db = gdbGot
+    if dbname == 'got':
+        db = gdbGot
 
-    # elif dbname == 'path':
-    #     db = gdbPath
+    elif dbname == 'path':
+        db = gdbPath
 
-    # elif dbname == 'coauth':
-    #     db = gdbCoauth
+    elif dbname == 'coauth':
+        db = gdbCoauth
 
     labels = []
-
-    # labelQuery = 'CALL db.labels()'
-
 
     labelQuery = ("CALL db.labels() YIELD label  "
                 " WITH label "
@@ -95,8 +96,6 @@ def get_labels(dbname):
 
     labelResults = db.query(labelQuery)
 
-    print (labelResults)
-
     for label , nodes in labelResults:
         labels.append({"name": label, "nodes":nodes})
 
@@ -106,9 +105,12 @@ def get_labels(dbname):
 
 
 @app.route("/graph/<dbname>") 
-@app.route("/graph/<dbname>/<rootID>/<include>")
+@app.route("/graph/<dbname>/<path:rootID>")
+@app.route("/graph/<dbname>/<path:rootID>/<include>")
 def get_graph(dbname = 'got',rootID = None, include = 'true'):
-
+    rootID = quote(request.args.get("rootID",rootID))
+    # rootID2 = unquote("conf%2Fchi%2F52TomlinsonRABPCMNLPTCOSSPSMFMKBCSBGNHBS12")
+    # request.args.get("rootID",rootID)
     if dbname == 'got':
         db = gdbGot
 
@@ -140,10 +142,10 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
                 # " RETURN path") 
     
     setResults = db.query(setQuery,
-                       params={"rootID":request.args.get("rootID",rootID)})
+                       params={"rootID":rootID})
 
     edgeResults = db.query(edgeQuery,
-                       params={"rootID":request.args.get("rootID",rootID)})
+                       params={"rootID":rootID})
 
     nodes=[]
     rels=[]
