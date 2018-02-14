@@ -15,7 +15,7 @@ _log = logging.getLogger(__name__)
 
 gdbPath = GraphDatabase("http://neo4j_path:7474")
 gdbGot = GraphDatabase("http://neo4j_got:7474")
-# gdbCoauth = GraphDatabase("http://neo4j_coauth:7474")
+gdbCoauth = GraphDatabase("http://neo4j_dblp:7474")
 
 
 @app.route('/', methods=['GET'])
@@ -33,26 +33,31 @@ def get_edges(dbname,nodeID):
     elif dbname == 'path':
         db = gdbPath
 
-    # elif dbname == 'coauth':
-    #     db = gdbCoauth
+    elif dbname == 'coauth':
+        db = gdbCoauth
 
     # labelQuery = 'CALL db.labels()'
 
-    query = ("MATCH (root)-[edge]-(target) WHERE root.id= {nodeID} OR root.uuid = {nodeID} "
+    query = ("MATCH (root)-[edge]-(target) "
+            " WITH root, edge, target, endNode(edge) as endNode, startNode(edge) as startNode "
+            " WHERE root.id= {nodeID} OR root.uuid = {nodeID} "
                 "RETURN {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id), info:edge} as edge, "
-                " {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target ")
+                " {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target, "
+                " {title: COALESCE (endNode.name, endNode.title), label:labels(endNode), id:COALESCE (endNode.uuid, endNode.id)} as endNode, "
+                " {title: COALESCE (startNode.name, startNode.title), label:labels(startNode), id:COALESCE (startNode.uuid, startNode.id)} as startNode ")
 
     
     results = db.query(query,
                        params={"nodeID":request.args.get("nodeID",nodeID)})
 
-    
+    print (results)
     nodes=[]
     rels = []
     
 
-    for edge, target in results:
-        newNode = {"edge":edge, "uuid":target['id']} 
+
+    for edge, target, endNode, startNode in results:
+        newNode = {"endNode": endNode, "startNode":startNode, "edge":edge, "uuid":target['id']} 
         try:
             nodes.index(newNode)
         except ValueError:
@@ -65,11 +70,13 @@ def get_edges(dbname,nodeID):
 @app.route("/labels/<dbname>")
 def get_labels(dbname):
 
-    if dbname == 'got':
-        db = gdbGot
+    db = gdbGot
 
-    elif dbname == 'path':
-        db = gdbPath
+    # if dbname == 'got':
+    #     db = gdbGot
+
+    # elif dbname == 'path':
+    #     db = gdbPath
 
     # elif dbname == 'coauth':
     #     db = gdbCoauth
@@ -77,6 +84,7 @@ def get_labels(dbname):
     labels = []
 
     # labelQuery = 'CALL db.labels()'
+
 
     labelQuery = ("CALL db.labels() YIELD label  "
                 " WITH label "
@@ -87,10 +95,12 @@ def get_labels(dbname):
 
     labelResults = db.query(labelQuery)
 
+    print (labelResults)
+
     for label , nodes in labelResults:
         labels.append({"name": label, "nodes":nodes})
 
-    return Response(dumps({"labels": labels}),
+    return Response(dumps({"query":labelQuery, "labels": labels}),
         mimetype="application/json")
 
 
@@ -105,18 +115,14 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
         if rootID is None:
             rootID = 'fb7b71da-84cb-4af5-a9fc-fc14e597f8f0' #Cercei Lannister
 
- 
-
     elif dbname == 'path':
         db = gdbPath
 
         if rootID is None:
             rootID = 'C00166' #Sample Root
 
-
-
-    # elif dbname == 'coauth':
-    #     db = gdbCoauth
+    elif dbname == 'coauth':
+        db = gdbCoauth
 
     setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id)} as edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
@@ -126,9 +132,9 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
                 # " UNWIND nodes as m "
-                " MATCH (n)-[edge]-> (m) "
-                " WITH n, edge, m"
-                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as n, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as m ") 
+                " MATCH (n)-[edge]- (m) "
+                " WITH startNode(edge) as n, edge, endNode(edge) as m"
+                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ") 
                 # " WITH * WHERE id(n) < id(m) "
                 # " MATCH path = allShortestPaths( (n)-[*..1]-(m) ) "
                 # " RETURN path") 
@@ -178,7 +184,7 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
                 rels.append(rel)
 
 
-    # Add in edges in between set nodes
+    # Add in edges that arrive/leave from set nodes
     for n, edge, m in edgeResults:
 
         filteredSLabels = [item for item in n['label'] if '_' not in item]
