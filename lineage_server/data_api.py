@@ -29,8 +29,9 @@ def _func():
         'message': 'Basic Test'
     })
 
-@app.route("/edges/<dbname>/<nodeID>")
+@app.route("/edges/<dbname>/<path:nodeID>")
 def get_edges(dbname,nodeID):
+    nodeID = quote(nodeID)
 
     if dbname == 'got':
         db = gdbGot
@@ -74,7 +75,6 @@ def get_edges(dbname,nodeID):
 
 @app.route("/labels/<dbname>")
 def get_labels(dbname):
-
 
     if dbname == 'got':
         db = gdbGot
