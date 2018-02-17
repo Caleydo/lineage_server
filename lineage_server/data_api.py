@@ -2,7 +2,7 @@ from phovea_server.ns import Namespace
 from phovea_server.util import jsonify
 
 #to parse urls with / in them
-# from urllib.parse import urlparse 
+#from urllib.parse import urlparse 
 
 from requests.utils import quote, unquote
 
@@ -30,7 +30,7 @@ def _func():
     })
 
 @app.route("/edges/<dbname>/<path:nodeID>")
-def get_edges(dbname,nodeID):
+def get_edges(dbname, nodeID):
     nodeID = quote(nodeID)
 
     if dbname == 'got':
@@ -42,21 +42,18 @@ def get_edges(dbname,nodeID):
     elif dbname == 'coauth':
         db = gdbCoauth
 
-    # labelQuery = 'CALL db.labels()'
-
     query = ("MATCH (root)-[edge]-(target) "
             " WITH root, edge, target, endNode(edge) as endNode, startNode(edge) as startNode "
             " WHERE root.id= {nodeID} OR root.uuid = {nodeID} "
-                "RETURN {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id), info:edge} as edge, "
-                " {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target, "
-                " {title: COALESCE (endNode.name, endNode.title), label:labels(endNode), id:COALESCE (endNode.uuid, endNode.id)} as endNode, "
-                " {title: COALESCE (startNode.name, startNode.title), label:labels(startNode), id:COALESCE (startNode.uuid, startNode.id)} as startNode ")
+            " RETURN {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id), info:edge} as edge, "
+            " {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target, "
+            " {title: COALESCE (endNode.name, endNode.title), label:labels(endNode), id:COALESCE (endNode.uuid, endNode.id)} as endNode, "
+            " {title: COALESCE (startNode.name, startNode.title), label:labels(startNode), id:COALESCE (startNode.uuid, startNode.id)} as startNode ")
 
     
     results = db.query(query,
                        params={"nodeID":request.args.get("nodeID",nodeID)})
 
-    print (results)
     nodes=[]
     rels = []
     
@@ -107,8 +104,8 @@ def get_labels(dbname):
 @app.route("/graph/<dbname>") 
 @app.route("/graph/<dbname>/<path:rootID>")
 @app.route("/graph/<dbname>/<path:rootID>/<include>")
-def get_graph(dbname = 'got',rootID = None, include = 'true'):
-    rootID = quote(request.args.get("rootID",rootID))
+def get_graph(dbname='got', rootID=None, include='true'):
+    rootID = quote(request.args.get("rootID", rootID))
     # rootID2 = unquote("conf%2Fchi%2F52TomlinsonRABPCMNLPTCOSSPSMFMKBCSBGNHBS12")
     # request.args.get("rootID",rootID)
     if dbname == 'got':
@@ -149,10 +146,6 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
 
     nodes=[]
     rels=[]
-
-    
-    # filteredRootLabels = [item for item in results[0][0]['label'] if '_' not in item] 
-    # nodes = [{"title": results[0][0]['title'], "label":filteredRootLabels[0], "uuid":results[0][0]['id']}] #add root object to array of nodes
 
     # Add all target nodes to array node
     for root, edge, target in setResults:
@@ -203,6 +196,66 @@ def get_graph(dbname = 'got',rootID = None, include = 'true'):
 
     
     return Response(dumps({"setQuery":setQuery, "edgeQuery":edgeQuery, "nodes": nodes, "links": rels, "root":[rootID]}),
+        mimetype="application/json")
+
+
+
+@app.route("/getNode/<dbname>/<path:rootID>")
+def get_node(dbname, rootID):
+    rootID = quote(request.args.get("rootID", rootID))
+    # rootID2 = unquote("conf%2Fchi%2F52TomlinsonRABPCMNLPTCOSSPSMFMKBCSBGNHBS12")
+    # request.args.get("rootID",rootID)
+    if dbname == 'got':
+        db = gdbGot
+
+    elif dbname == 'path':
+        db = gdbPath
+
+    elif dbname == 'coauth':
+        db = gdbCoauth
+
+    setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
+                " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id)} as edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
+
+ 
+    setResults = db.query(setQuery,
+                       params={"rootID":rootID})
+
+    nodes=[]
+    targetNodes=[]
+    rels=[]
+
+
+    # Add all target nodes to array node
+    for root, edge, target in setResults:
+
+        filteredRootLabels = [item for item in root['label'] if '_' not in item]
+        filteredTargetLabels = [item for item in target['label'] if '_' not in item]
+
+        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id']} 
+        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id']} 
+        
+        try:
+            nodes.index(rootNode)
+        except ValueError:
+            nodes.append(rootNode)
+
+        try:
+            nodes.index(targetNode)
+        except ValueError:
+            nodes.append(targetNode)
+
+        source = rootNode
+        target = targetNode
+
+        rel = {"source": source, "target": target, "edge":edge}
+        try:
+           rels.index(rel)
+        except ValueError:
+           rels.append(rel)
+
+    
+    return Response(dumps({"query":setQuery, "nodes": nodes, "targetNodes": targetNodes, "links": rels, "root":[rootID]}),
         mimetype="application/json")
 
 
