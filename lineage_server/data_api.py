@@ -31,7 +31,7 @@ def _func():
 
 @app.route("/edges/<dbname>/<path:nodeID>")
 def get_edges(dbname, nodeID):
-    nodeID = quote(nodeID)
+    nodeID = unquote(nodeID)
 
     if dbname == 'got':
         db = gdbGot
@@ -105,7 +105,7 @@ def get_labels(dbname):
 @app.route("/graph/<dbname>/<path:rootID>")
 @app.route("/graph/<dbname>/<path:rootID>/<include>")
 def get_graph(dbname='got', rootID=None, include='true'):
-    rootID = quote(request.args.get("rootID", rootID))
+    rootID = unquote(request.args.get("rootID", rootID))
     # rootID2 = unquote("conf%2Fchi%2F52TomlinsonRABPCMNLPTCOSSPSMFMKBCSBGNHBS12")
     # request.args.get("rootID",rootID)
     if dbname == 'got':
@@ -202,7 +202,7 @@ def get_graph(dbname='got', rootID=None, include='true'):
 
 @app.route("/getNode/<dbname>/<path:rootID>")
 def get_node(dbname, rootID):
-    rootID = quote(request.args.get("rootID", rootID))
+    rootID = unquote(request.args.get("rootID", rootID))
     # rootID2 = unquote("conf%2Fchi%2F52TomlinsonRABPCMNLPTCOSSPSMFMKBCSBGNHBS12")
     # request.args.get("rootID",rootID)
     if dbname == 'got':
