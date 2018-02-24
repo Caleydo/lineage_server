@@ -101,24 +101,78 @@ def get_labels(dbname):
 
 
 
+@app.route("/property/<dbname>/<propName>")
+def get_property(dbname,propName):
+
+    if dbname == 'got':
+        db = gdbGot
+
+    elif dbname == 'path':
+        db = gdbPath
+
+    elif dbname == 'coauth':
+        db = gdbCoauth
+
+    resultNodes = []
+
+    query = ("MATCH (n) WHERE {propName} in keys(n) " 
+    " RETURN {uuid:COALESCE (n.uuid, n.id), prop:{propName}, value:n[{propName}]} as node ")
+
+    results = db.query(query,
+                       params={"propName":propName})
+
+
+    for node in results:
+        try:
+            resultNodes.index(node[0])
+        except ValueError:
+            resultNodes.append(node[0])
+
+    return Response(dumps({"query":query, "results": resultNodes}),
+        mimetype="application/json")
+
+@app.route("/properties/<dbname>")
+def get_properties(dbname):
+
+    if dbname == 'got':
+        db = gdbGot
+
+    elif dbname == 'path':
+        db = gdbPath
+
+    elif dbname == 'coauth':
+        db = gdbCoauth
+
+    properties = []
+
+    query = ("MATCH (n) WITH distinct keys(n) as keys, labels(n) as labels UNWIND keys as k UNWIND labels as l RETURN k,l")
+    
+    results = db.query(query)
+
+    for k,l in results:
+        newNode = {"label":l,"property":k}
+        try:
+            properties.index(newNode)
+        except ValueError:
+            properties.append(newNode)
+
+    return Response(dumps({"query":query, "properties": properties}),
+        mimetype="application/json")
+
+
+
+
 @app.route("/graph/<dbname>") 
 @app.route("/graph/<dbname>/<path:rootID>")
 @app.route("/graph/<dbname>/<path:rootID>/<include>")
 def get_graph(dbname='got', rootID=None, include='true'):
     rootID = unquote(request.args.get("rootID", rootID))
-    # rootID2 = unquote("conf%2Fchi%2F52TomlinsonRABPCMNLPTCOSSPSMFMKBCSBGNHBS12")
-    # request.args.get("rootID",rootID)
+
     if dbname == 'got':
         db = gdbGot
 
-        if rootID is None:
-            rootID = 'fb7b71da-84cb-4af5-a9fc-fc14e597f8f0' #Cercei Lannister
-
     elif dbname == 'path':
         db = gdbPath
-
-        if rootID is None:
-            rootID = 'C00166' #Sample Root
 
     elif dbname == 'coauth':
         db = gdbCoauth
@@ -130,7 +184,7 @@ def get_graph(dbname='got', rootID=None, include='true'):
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
-                # " UNWIND nodes as m "
+                " UNWIND nodes as m "
                 " MATCH (n)-[edge]- (m) "
                 " WITH startNode(edge) as n, edge, endNode(edge) as m"
                 " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ") 
@@ -241,9 +295,9 @@ def get_node(dbname, rootID):
             nodes.append(rootNode)
 
         try:
-            nodes.index(targetNode)
+            targetNodes.index(targetNode)
         except ValueError:
-            nodes.append(targetNode)
+            targetNodes.append(targetNode)
 
         source = rootNode
         target = targetNode
