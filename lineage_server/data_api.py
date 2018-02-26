@@ -6,6 +6,8 @@ from phovea_server.util import jsonify
 
 from requests.utils import quote, unquote
 
+# from urllib import parse
+
 import logging
 
 from json import dumps
@@ -134,6 +136,8 @@ def get_property(dbname,propName):
 @app.route("/properties/<dbname>")
 def get_properties(dbname):
 
+    # db = undefined
+
     if dbname == 'got':
         db = gdbGot
 
@@ -159,14 +163,15 @@ def get_properties(dbname):
     return Response(dumps({"query":query, "properties": properties}),
         mimetype="application/json")
 
-
-
-
 @app.route("/graph/<dbname>") 
 @app.route("/graph/<dbname>/<path:rootID>")
 @app.route("/graph/<dbname>/<path:rootID>/<include>")
 def get_graph(dbname='got', rootID=None, include='true'):
     rootID = unquote(request.args.get("rootID", rootID))
+
+    # existingNodes = request.GET.get('treeNode')
+
+    # print(existingNodes)
 
     if dbname == 'got':
         db = gdbGot
