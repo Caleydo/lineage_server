@@ -90,7 +90,7 @@ def get_labels(dbname):
                 " WITH label "
                 " MATCH (n) WHERE label in labels(n) " 
                 " WITH label, n, size((n)--()) as degree "
-                " ORDER BY degree DESC " 
+                # " ORDER BY degree DESC " 
                 " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree, id:COALESCE (n.uuid, n.id)}) AS nodes ")
 
     labelResults = db.query(labelQuery)
@@ -118,7 +118,8 @@ def get_property(dbname,propName):
     resultNodes = []
 
     query = ("MATCH (n) WHERE {propName} in keys(n) " 
-    " RETURN {uuid:COALESCE (n.uuid, n.id), prop:{propName}, value:n[{propName}]} as node ")
+    " RETURN {uuid:COALESCE (n.uuid, n.id), prop:{propName}, value:n[{propName}]} as node ") 
+    # " LIMIT 25 ")
 
     results = db.query(query,
                        params={"propName":propName})
@@ -183,14 +184,15 @@ def get_graph(dbname='got', rootID=None, include='true'):
         db = gdbCoauth
 
     setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
-                " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id)} as edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
+                " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
+                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
 
 
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
-                " UNWIND nodes as m "
-                " MATCH (n)-[edge]- (m) "
+                # " UNWIND nodes as m "
+                " MATCH (n)-[edge]-() "
                 " WITH startNode(edge) as n, edge, endNode(edge) as m"
                 " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ") 
                 # " WITH * WHERE id(n) < id(m) "
@@ -207,13 +209,13 @@ def get_graph(dbname='got', rootID=None, include='true'):
     rels=[]
 
     # Add all target nodes to array node
-    for root, edge, target in setResults:
+    for rootDegree, targetDegree, root, edge, target in setResults:
 
         filteredRootLabels = [item for item in root['label'] if '_' not in item]
         filteredTargetLabels = [item for item in target['label'] if '_' not in item]
 
-        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id']} 
-        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id']} 
+        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id'], "graphDegree":rootDegree} 
+        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id'],"graphDegree":targetDegree} 
         
         try:
             nodes.index(targetNode)
@@ -274,7 +276,8 @@ def get_node(dbname, rootID):
         db = gdbCoauth
 
     setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
-                " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id)} as edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
+                " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target  " 
+                " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id), graphDegree:rootDegree} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id), graphDegree:targetDegree} as target")
 
  
     setResults = db.query(setQuery,
@@ -291,8 +294,8 @@ def get_node(dbname, rootID):
         filteredRootLabels = [item for item in root['label'] if '_' not in item]
         filteredTargetLabels = [item for item in target['label'] if '_' not in item]
 
-        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id']} 
-        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id']} 
+        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id'],"graphDegree":root['graphDegree']} 
+        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id'], "graphDegree":target['graphDegree']} 
         
         try:
             nodes.index(rootNode)
