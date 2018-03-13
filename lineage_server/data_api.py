@@ -90,7 +90,6 @@ def get_labels(dbname):
                 " WITH label "
                 " MATCH (n) WHERE label in labels(n) " 
                 " WITH label, n, size((n)--()) as degree "
-                # " ORDER BY degree DESC " 
                 " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree, id:COALESCE (n.uuid, n.id)}) AS nodes ")
 
     labelResults = db.query(labelQuery)
@@ -103,8 +102,10 @@ def get_labels(dbname):
 
 
 
-@app.route("/property/<dbname>/<propName>")
+@app.route("/property/<dbname>/<propName>", methods=["POST"])
 def get_property(dbname,propName):
+
+    request_data = request.get_json()
 
     if dbname == 'got':
         db = gdbGot
@@ -117,12 +118,11 @@ def get_property(dbname,propName):
 
     resultNodes = []
 
-    query = ("MATCH (n) WHERE {propName} in keys(n) " 
+    query = ("MATCH (n) WHERE COALESCE (n.id, n.uuid) in {treeNodes} AND {propName} in keys(n) " 
     " RETURN {uuid:COALESCE (n.uuid, n.id), prop:{propName}, value:n[{propName}]} as node ") 
-    # " LIMIT 25 ")
 
     results = db.query(query,
-                       params={"propName":propName})
+                       params={"propName":propName, "treeNodes":request_data[u'treeNodes']})
 
 
     for node in results:
@@ -164,11 +164,13 @@ def get_properties(dbname):
     return Response(dumps({"query":query, "properties": properties}),
         mimetype="application/json")
 
-@app.route("/graph/<dbname>") 
-@app.route("/graph/<dbname>/<path:rootID>")
-@app.route("/graph/<dbname>/<path:rootID>/<include>")
-def get_graph(dbname='got', rootID=None, include='true'):
+@app.route("/graph/<dbname>", methods=["POST"]) 
+@app.route("/graph/<dbname>/<path:rootID>", methods=["POST"])
+@app.route("/graph/<dbname>/<path:rootID>/<include>", methods=["POST"])
+def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
     rootID = unquote(request.args.get("rootID", rootID))
+
+    request_data = request.get_json()
 
     # existingNodes = request.GET.get('treeNode')
 
@@ -185,16 +187,17 @@ def get_graph(dbname='got', rootID=None, include='true'):
 
     setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
-                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
-
+                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target"
+                " LIMIT 100 ")
 
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
                 # " UNWIND nodes as m "
-                " MATCH (n)-[edge]-() "
+                " MATCH (n)-[edge]-(m) WHERE COALESCE (m.id, m.uuid) in {treeNodes} or m in nodes"
                 " WITH startNode(edge) as n, edge, endNode(edge) as m"
-                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ") 
+                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target "
+                " LIMIT 100 ")
                 # " WITH * WHERE id(n) < id(m) "
                 # " MATCH path = allShortestPaths( (n)-[*..1]-(m) ) "
                 # " RETURN path") 
@@ -203,8 +206,10 @@ def get_graph(dbname='got', rootID=None, include='true'):
                        params={"rootID":rootID})
 
     edgeResults = db.query(edgeQuery,
-                       params={"rootID":rootID})
+                       params={"rootID":rootID,"treeNodes":request_data[u'treeNodes']})
 
+    # WHERE m.uuid in {treeNodes}
+    
     nodes=[]
     rels=[]
 
@@ -255,13 +260,110 @@ def get_graph(dbname='got', rootID=None, include='true'):
         except ValueError:
             rels.append(rel)
 
-    
-    return Response(dumps({"setQuery":setQuery, "edgeQuery":edgeQuery, "nodes": nodes, "links": rels, "root":[rootID]}),
+    return Response(dumps({"params":request_data,"nodes": nodes, "links": rels, "root":[rootID]}),
         mimetype="application/json")
 
+    # return Response(dumps({"params":request_data,"setQuery":setQuery, "edgeQuery":edgeQuery, "nodes": nodes, "links": rels, "root":[rootID]}),
+    #     mimetype="application/json")
+
+@app.route("/getNodes/<dbname>", methods=["POST"]) 
+def get_nodes(dbname='got'):
+    request_data = request.get_json()
+
+    # existingNodes = request.GET.get('treeNode')
+
+    # print(existingNodes)
+
+    if dbname == 'got':
+        db = gdbGot
+
+    elif dbname == 'path':
+        db = gdbPath
+
+    elif dbname == 'coauth':
+        db = gdbCoauth
+
+    setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.id, root.uuid) in {rootNodes}  "
+                " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
+                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
 
 
-@app.route("/getNode/<dbname>/<path:rootID>")
+    edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.id, root.uuid) in {rootNodes}  "
+                " with collect(root) as roots, collect(target) as nodes "              
+                " MATCH (root)-[edge]-(m) WHERE root in roots OR root in nodes AND (COALESCE (m.id, m.uuid) in {treeNodes} or m in nodes or m in roots) "
+                # " AND (COALESCE (target.id, target.uuid) in {treeNodes} or target in nodes) "
+                " WITH startNode(edge) as n, edge, endNode(edge) as m"
+                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ") 
+                # " WITH * WHERE id(n) < id(m) "
+                # " MATCH path = allShortestPaths( (n)-[*..1]-(m) ) "
+                # " RETURN path") 
+    
+    setResults = db.query(setQuery,
+                       params={"rootNodes":request_data[u'rootNodes']})
+
+    edgeResults = db.query(edgeQuery,
+                       params={"rootNodes":request_data[u'rootNodes'],"treeNodes":request_data[u'treeNodes']})
+
+    # WHERE m.uuid in {treeNodes}
+    
+    nodes=[]
+    rels=[]
+
+    # Add all target nodes to array node
+    for rootDegree, targetDegree, root, edge, target in setResults:
+
+        filteredRootLabels = [item for item in root['label'] if '_' not in item]
+        filteredTargetLabels = [item for item in target['label'] if '_' not in item]
+
+        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id'], "graphDegree":rootDegree} 
+        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id'],"graphDegree":targetDegree} 
+        
+        try:
+            nodes.index(targetNode)
+        except ValueError:
+            nodes.append(targetNode)
+
+
+        try:
+            nodes.index(rootNode)
+        except ValueError:
+            nodes.append(rootNode)
+
+        source = rootNode
+        target = targetNode
+
+
+        rel = {"source": source, "target": target, "edge":edge}
+        try:
+            rels.index(rel)
+        except ValueError:
+            rels.append(rel)
+
+
+    # Add in edges that arrive/leave from set nodes
+    for n, edge, m in edgeResults:
+
+        filteredSLabels = [item for item in n['label'] if '_' not in item]
+        filteredTLabels = [item for item in m['label'] if '_' not in item]
+
+        source = {"title": n['title'], "label":filteredSLabels[0], "uuid":n['id']} 
+        target = {"title": m['title'], "label":filteredTLabels[0], "uuid":m['id']} 
+
+        rel = {"source": source, "target": target, "edge":edge} #{'attr':edge['data'],'type':edge['type']}}
+        try:
+            rels.index(rel)
+        except ValueError:
+            rels.append(rel)
+
+    return Response(dumps({"params":request_data,"nodes": nodes, "links": rels, "root":[request_data[u'rootNode']]}),
+        mimetype="application/json")
+
+    # return Response(dumps({"params":request_data,"setQuery":setQuery, "edgeQuery":edgeQuery, "nodes": nodes, "links": rels, "root":[rootID]}),
+    #     mimetype="application/json")
+
+
+
+@app.route("/getNode/<dbname>/<path:rootID>", methods=["POST"])
 def get_node(dbname, rootID):
     rootID = unquote(request.args.get("rootID", rootID))
     # rootID2 = unquote("conf%2Fchi%2F52TomlinsonRABPCMNLPTCOSSPSMFMKBCSBGNHBS12")
