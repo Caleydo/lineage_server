@@ -88,9 +88,9 @@ def get_labels(dbname):
 
     labelQuery = ("CALL db.labels() YIELD label  "
                 " WITH label "
-                " MATCH (n) WHERE label in labels(n) " 
+                " MATCH (n) WHERE label in labels(n) "
                 " WITH label, n, size((n)--()) as degree "
-                " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree, id:COALESCE (n.uuid, n.id)}) AS nodes ")
+                " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree, id:COALESCE (n.uuid, n.id)})[..20] AS nodes ")
 
     labelResults = db.query(labelQuery)
 
@@ -99,6 +99,38 @@ def get_labels(dbname):
 
     return Response(dumps({"query":labelQuery, "labels": labels}),
         mimetype="application/json")
+
+@app.route("/filter/<dbname>", methods=["POST"])
+def filter(dbname):
+
+    request_data = request.get_json()
+
+    searchString = request_data[u'searchString']
+
+    if dbname == 'got':
+        db = gdbGot
+
+    elif dbname == 'path':
+        db = gdbPath
+
+    elif dbname == 'coauth':
+        db = gdbCoauth
+
+    labels = []
+
+    query = ("CALL db.labels() YIELD label  "
+                " WITH label "
+                " MATCH (n) WHERE label in labels(n) AND COALESCE (n.name, n.title) =~ '(?i).*" + searchString + ".*'" 
+                " WITH label, n, size((n)--()) as degree "
+                " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree, id:COALESCE (n.uuid, n.id)})[..100] AS nodes ")
+
+
+    labelResults = db.query(query)
+
+    for label , nodes in labelResults:
+        labels.append({"name": label, "nodes":nodes})
+
+    return Response(dumps({"query":query, "labels": labels}),mimetype="application/json")
 
 
 
@@ -193,7 +225,6 @@ def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
-                # " UNWIND nodes as m "
                 " MATCH (n)-[edge]-(m) WHERE COALESCE (m.id, m.uuid) in {treeNodes} or m in nodes"
                 " WITH startNode(edge) as n, edge, endNode(edge) as m"
                 " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target "
