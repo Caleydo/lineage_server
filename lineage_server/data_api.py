@@ -31,8 +31,10 @@ def _func():
         'message': 'Basic Test'
     })
 
-@app.route("/edges/<dbname>/<path:nodeID>")
+@app.route("/edges/<dbname>/<path:nodeID>", methods=["POST"])
 def get_edges(dbname, nodeID):
+
+    request_data = request.get_json()
     nodeID = unquote(nodeID)
 
     if dbname == 'got':
@@ -45,8 +47,10 @@ def get_edges(dbname, nodeID):
         db = gdbCoauth
 
     query = ("MATCH (root)-[edge]-(target) "
+            " WHERE COALESCE (target.uuid, target.id) in {treeNodes} "
+            # " and  COALESCE (root.id, root.uuid) in {treeNodes} "
             " WITH root, edge, target, endNode(edge) as endNode, startNode(edge) as startNode "
-            " WHERE root.id= {nodeID} OR root.uuid = {nodeID} "
+            " WHERE COALESCE (root.uuid, root.id) = {nodeID} "
             " RETURN {title: COALESCE (edge.name, edge.title), id:COALESCE (edge.uuid, edge.id), info:edge} as edge, "
             " {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target, "
             " {title: COALESCE (endNode.name, endNode.title), label:labels(endNode), id:COALESCE (endNode.uuid, endNode.id)} as endNode, "
@@ -54,7 +58,7 @@ def get_edges(dbname, nodeID):
 
     
     results = db.query(query,
-                       params={"nodeID":request.args.get("nodeID",nodeID)})
+                       params={"nodeID":request.args.get("nodeID",nodeID),"treeNodes":request_data[u'treeNodes']})
 
     nodes=[]
     rels = []
@@ -132,6 +136,33 @@ def filter(dbname):
 
     return Response(dumps({"query":query, "labels": labels}),mimetype="application/json")
 
+@app.route("/query/<dbname>", methods=["POST"])
+def query(dbname):
+
+    request_data = request.get_json()
+
+    searchString = request_data[u'searchString']
+
+    if dbname == 'got':
+        db = gdbGot
+
+    elif dbname == 'path':
+        db = gdbPath
+
+    elif dbname == 'coauth':
+        db = gdbCoauth
+
+    labels = []
+
+    query = searchString
+
+
+    labelResults = db.query(query)
+
+    for label , nodes in labelResults:
+        labels.append({"name": label, "nodes":nodes})
+
+    return Response(dumps({"query":query, "labels": labels}),mimetype="application/json")
 
 
 @app.route("/property/<dbname>/<propName>", methods=["POST"])
@@ -150,7 +181,7 @@ def get_property(dbname,propName):
 
     resultNodes = []
 
-    query = ("MATCH (n) WHERE COALESCE (n.id, n.uuid) in {treeNodes} AND {propName} in keys(n) " 
+    query = ("MATCH (n) WHERE COALESCE (n.uuid, n.id) in {treeNodes} AND {propName} in keys(n) " 
     " RETURN {uuid:COALESCE (n.uuid, n.id), prop:{propName}, value:n[{propName}]} as node ") 
 
     results = db.query(query,
@@ -217,18 +248,18 @@ def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
     elif dbname == 'coauth':
         db = gdbCoauth
 
-    setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
+    setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
                 " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target"
                 " LIMIT 100 ")
 
-    edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
+    edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
                 " WITH collect(target) as nodes "
                 " UNWIND nodes as n "
-                " MATCH (n)-[edge]-(m) WHERE COALESCE (m.id, m.uuid) in {treeNodes} or m in nodes"
+                " MATCH (n)-[edge]-(m) WHERE COALESCE (m.uuid, m.id) in {treeNodes} or m in nodes"
                 " WITH startNode(edge) as n, edge, endNode(edge) as m"
-                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target "
-                " LIMIT 100 ")
+                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ")
+                # " LIMIT 100 ")
                 # " WITH * WHERE id(n) < id(m) "
                 # " MATCH path = allShortestPaths( (n)-[*..1]-(m) ) "
                 # " RETURN path") 
@@ -314,15 +345,14 @@ def get_nodes(dbname='got'):
     elif dbname == 'coauth':
         db = gdbCoauth
 
-    setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.id, root.uuid) in {rootNodes}  "
+    setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) in {rootNodes}  "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
                 " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
 
 
-    edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.id, root.uuid) in {rootNodes}  "
+    edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) in {rootNodes}  "
                 " with collect(root) as roots, collect(target) as nodes "              
-                " MATCH (root)-[edge]-(m) WHERE root in roots OR root in nodes AND (COALESCE (m.id, m.uuid) in {treeNodes} or m in nodes or m in roots) "
-                # " AND (COALESCE (target.id, target.uuid) in {treeNodes} or target in nodes) "
+                " MATCH (root)-[edge]-(m) WHERE root in roots OR root in nodes AND (COALESCE (m.uuid, m.id) in {treeNodes} or m in nodes or m in roots) "
                 " WITH startNode(edge) as n, edge, endNode(edge) as m"
                 " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ") 
                 # " WITH * WHERE id(n) < id(m) "
@@ -408,7 +438,7 @@ def get_node(dbname, rootID):
     elif dbname == 'coauth':
         db = gdbCoauth
 
-    setQuery = ("MATCH (root)-[edge]-(target) WHERE root.id = {rootID} OR root.uuid = {rootID} "
+    setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target  " 
                 " RETURN {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id), graphDegree:rootDegree} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id), graphDegree:targetDegree} as target")
 
