@@ -94,7 +94,7 @@ def get_labels(dbname):
                 " WITH label "
                 " MATCH (n) WHERE label in labels(n) "
                 " WITH label, n, size((n)--()) as degree "
-                " RETURN  label, collect({title: COALESCE (n.name, n.title), degree: degree, id:COALESCE (n.uuid, n.id)})[..20] AS nodes ")
+                " RETURN  label, collect({title: COALESCE (n.name, n.title, n.review_id, n.neighborhood_id,n.code), degree: degree, id:COALESCE (n.uuid, n.id)})[..20] AS nodes ")
 
     labelResults = db.query(labelQuery)
 
@@ -250,7 +250,7 @@ def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
 
     setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
-                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target"
+                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title, root.review_id, root.neighborhood_id,root.code), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title, target.review_id, target.neighborhood_id,target.code), label:labels(target), id:COALESCE (target.uuid, target.id)} as target"
                 " LIMIT 100 ")
 
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
@@ -258,7 +258,7 @@ def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
                 " UNWIND nodes as n "
                 " MATCH (n)-[edge]-(m) WHERE COALESCE (m.uuid, m.id) in {treeNodes} or m in nodes"
                 " WITH startNode(edge) as n, edge, endNode(edge) as m"
-                " RETURN {title: COALESCE (n.name, n.title), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ")
+                " RETURN {title: COALESCE (n.name, n.title, n.review_id, n.neighborhood_id,n.code), label:labels(n), id:COALESCE (n.uuid, n.id)} as source, edge,  {title: COALESCE (m.name, m.title, m.review_id, m.neighborhood_id,m.code), label:labels(m), id:COALESCE (m.uuid, m.id)} as target ")
                 # " LIMIT 100 ")
                 # " WITH * WHERE id(n) < id(m) "
                 # " MATCH path = allShortestPaths( (n)-[*..1]-(m) ) "
