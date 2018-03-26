@@ -182,7 +182,7 @@ def get_property(dbname,propName):
     resultNodes = []
 
     query = ("MATCH (n) WHERE COALESCE (n.uuid, n.id) in {treeNodes} AND {propName} in keys(n) " 
-    " RETURN {uuid:COALESCE (n.uuid, n.id), prop:{propName}, value:n[{propName}]} as node ") 
+    " RETURN {uuid:COALESCE (n.uuid, n.id), prop:{propName}, label:labels(n), value:n[{propName}]} as node ") 
 
     results = db.query(query,
                        params={"propName":propName, "treeNodes":request_data[u'treeNodes']})
