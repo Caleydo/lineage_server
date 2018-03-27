@@ -250,7 +250,7 @@ def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
 
     setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
-                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title, root.review_id, root.neighborhood_id,root.code), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title, target.review_id, target.neighborhood_id,target.code), label:labels(target), id:COALESCE (target.uuid, target.id)} as target"
+                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title, root.review_id, root.neighborhood_id,root.code), label:labels(root), id:COALESCE (root.uuid, root.id), data:root} as root, edge, {title: COALESCE (target.name, target.title, target.review_id, target.neighborhood_id,target.code), label:labels(target), id:COALESCE (target.uuid, target.id),data:target} as target"
                 " LIMIT 100 ")
 
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
@@ -281,8 +281,8 @@ def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
         filteredRootLabels = [item for item in root['label'] if '_' not in item]
         filteredTargetLabels = [item for item in target['label'] if '_' not in item]
 
-        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id'], "graphDegree":rootDegree} 
-        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id'],"graphDegree":targetDegree} 
+        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id'], "graphDegree":rootDegree,"graphData":root['data']} 
+        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id'],"graphDegree":targetDegree,"graphData":target['data']} 
         
         try:
             nodes.index(targetNode)
@@ -347,7 +347,7 @@ def get_nodes(dbname='got'):
 
     setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) in {rootNodes}  "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
-                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id)} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id)} as target")
+                " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title), label:labels(root), id:COALESCE (root.uuid, root.id), data:root} as root, edge, {title: COALESCE (target.name, target.title), label:labels(target), id:COALESCE (target.uuid, target.id), data:target} as target")
 
 
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) in {rootNodes}  "
@@ -376,8 +376,8 @@ def get_nodes(dbname='got'):
         filteredRootLabels = [item for item in root['label'] if '_' not in item]
         filteredTargetLabels = [item for item in target['label'] if '_' not in item]
 
-        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id'], "graphDegree":rootDegree} 
-        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id'],"graphDegree":targetDegree} 
+        rootNode = {"title": root['title'], "label":filteredRootLabels[0], "uuid":root['id'], "graphDegree":rootDegree, "graphData":root['data']} 
+        targetNode = {"title": target['title'], "label":filteredTargetLabels[0], "uuid":target['id'],"graphDegree":targetDegree, "graphData":target['data']} 
         
         try:
             nodes.index(targetNode)
