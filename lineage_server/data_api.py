@@ -251,7 +251,7 @@ def get_graph(dbname='got', rootID=None, include='true', methods=["POST"]):
     setQuery = ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
                 " WITH size((root)--()) as rootDegree, size((target)--()) as targetDegree, root, edge, target"
                 " RETURN rootDegree, targetDegree, {title: COALESCE (root.name, root.title, root.review_id, root.neighborhood_id,root.code), label:labels(root), id:COALESCE (root.uuid, root.id), data:root} as root, edge, {title: COALESCE (target.name, target.title, target.review_id, target.neighborhood_id,target.code), label:labels(target), id:COALESCE (target.uuid, target.id),data:target} as target"
-                " LIMIT 100 ")
+                " LIMIT 161 ")
 
     edgeQuery =  ("MATCH (root)-[edge]-(target) WHERE COALESCE (root.uuid, root.id) = {rootID} "
                 " WITH collect(target) as nodes "
