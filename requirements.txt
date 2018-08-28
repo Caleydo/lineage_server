@@ -1,4 +1,4 @@
--e git+https://github.com/phovea/phovea_server.git@develop#egg=phovea_server
+phovea_server==2.0.0
 flake8==3.0.4
 pep8-naming==0.4.1
 pytest==3.0.3
