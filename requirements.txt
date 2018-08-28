@@ -1,1 +1,1 @@
--e git+https://github.com/phovea/phovea_server.git@develop#egg=phovea_server
+phovea_server==2.0.0
